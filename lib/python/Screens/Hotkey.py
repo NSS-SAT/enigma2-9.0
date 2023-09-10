@@ -19,10 +19,10 @@ import os
 
 class hotkey:
 	functions = None
-	hotkeys = [(_("Red") + " " + _("long"), "red_long", ""),
-		(_("Green") + " " + _("long"), "green_long", ""),
+	hotkeys = [(_("Red") + " " + _("long"), "red_long", "Module/Screens.About/MemoryInfo"),
+		(_("Green") + " " + _("long"), "green_long", "Module/Screens.PluginBrowser/PluginBrowser"),
 		(_("Yellow") + " " + _("long"), "yellow_long", "Plugins/Extensions/GraphMultiEPG/1"),
-		(_("Blue") + " " + _("long"), "blue_long", "SoftcamSetup"),
+		(_("Blue") + " " + _("long"), "blue_long", "Plugins/Extensions/NssPanel/1"),
 		("F1/LAN", "f1", ""),
 		("F1" + " " + _("long"), "f1_long", ""),
 		("F2", "f2", ""),
@@ -31,10 +31,10 @@ class hotkey:
 		("F3" + " " + _("long"), "f3_long", ""),
 		("F4", "f4", ""),
 		("F4" + " " + _("long"), "f4_long", ""),
-		(_("Red"), "red", ""),
-		(_("Green"), "green", ""),
+		(_("Red"), "red", "Module/Screens.About/MemoryInfo"),
+		(_("Green"), "green", "Module/Screens.PluginBrowser/PluginBrowser"),
 		(_("Yellow"), "yellow", ""),
-		(_("Blue"), "blue", ""),
+		(_("Blue"), "blue", "Plugins/Extensions/NssPanel/1"),
 		("Rec", "rec", ""),
 		("Rec" + " " + _("long"), "rec_long", "Infobar/instantRecord"),
 		("Radio", "radio", ""),
