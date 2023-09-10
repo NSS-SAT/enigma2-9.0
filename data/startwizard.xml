@@ -219,7 +219,7 @@ self.selectKey("LEFT")
 self.selectKey("RIGHT")
 			</code>
 		</step>
-		<step id="channels">
+		<!--<step id="channels">
 			<condition>
 from Components.NimManager import nimmanager
 self.condition = nimmanager.somethingConnected() and config.misc.installwizard.hasnetwork.value and config.misc.installwizard.opkgloaded.value
@@ -237,7 +237,7 @@ self.selectKey("RIGHT")
 from Components.NimManager import nimmanager
 self.condition = not nimmanager.somethingConnected() and config.misc.installwizard.hasnetwork.value and config.misc.installwizard.opkgloaded.value
 			</condition>
-			<text value="Please configure the fallback tuner setup"/>
+			<text value="Please configure the fallback tuner setup?"/>
 			<config screen="SetupFallbacktuner" module="SetupFallbacktuner" type="ConfigList"/>
 			<code>
 self.clearSelectedKeys()
@@ -267,7 +267,7 @@ self.condition = config.misc.installwizard.hasnetwork.value and config.misc.inst
 self.clearSelectedKeys()
 self.selectKey("OK")
 			</code>
-		</step>
+		</step>-->
 		<step id="setup">
 			<text value="Please setup the following basic configs!"/>
 			<config screen="Setup" module="Setup" args="wizardsetup" type="ConfigList"/>
