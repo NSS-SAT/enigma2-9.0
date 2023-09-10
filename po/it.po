@@ -4264,7 +4264,7 @@ msgid "Hardware Accelerated"
 msgstr "Hardware: "
 
 msgid "Hardware: "
-msgstr "Hardware: "
+msgstr "Decoder: "
 
 msgid "Heard Island and McDonald Islands"
 msgstr "Isole Heard e Isole McDonald"
@@ -8429,7 +8429,7 @@ msgstr "Longitudine locale"
 
 #, python-format
 msgid "Skin & Resolution: %s (%sx%s)\n"
-msgstr "Skin e Risolutione: %s (%sx%s)\n"
+msgstr "Skin e Risoluzione: %s (%sx%s)\n"
 
 #, fuzzy
 msgid "Skin Selection Actions"
