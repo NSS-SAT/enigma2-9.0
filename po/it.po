@@ -4003,8 +4003,7 @@ msgstr "RGB"
 msgid "GUI Settings"
 msgstr "Impostazioni"
 
-#, fuzzy
-msgid "GUI Skin"
+msgid "Impostazioni Skin"
 msgstr "Impostazioni"
 
 msgid ""
