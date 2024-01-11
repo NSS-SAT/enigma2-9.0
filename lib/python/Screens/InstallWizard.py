@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 from Screens.Screen import Screen
 from Components.ConfigList import ConfigListScreen, ConfigList
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
-from Components.config import config, ConfigSubsection, ConfigBoolean, getConfigListEntry, ConfigSelection, ConfigYesNo, ConfigIP, ConfigNothing
+from Components.config import config, ConfigSubsection, ConfigBoolean, ConfigSelection, ConfigYesNo, ConfigIP, ConfigNothing
 from Components.Network import iNetwork
 from Components.Opkg import OpkgComponent
 from enigma import eDVBDB
@@ -13,7 +14,7 @@ config.misc.installwizard.opkgloaded = ConfigBoolean(default=False)
 config.misc.installwizard.channellistdownloaded = ConfigBoolean(default=False)
 
 
-class InstallWizard(Screen, ConfigListScreen):
+class InstallWizard(ConfigListScreen, Screen):
 
 	STATE_UPDATE = 0
 	STATE_CHOISE_CHANNELLIST = 1
@@ -84,28 +85,27 @@ class InstallWizard(Screen, ConfigListScreen):
 		if self.index == self.STATE_UPDATE:
 			if config.misc.installwizard.hasnetwork.value:
 				ip = ".".join([str(x) for x in iNetwork.getAdapterAttribute(self.adapter, "ip")])
-				self.list.append(getConfigListEntry(_("Your internet connection is working (IP address: %s)") % ip, self.enabled))
+				self.list.append((_("Your internet connection is working (IP address: %s)") % ip, self.enabled))
 			else:
-				self.list.append(getConfigListEntry(_("Your receiver does not have an internet connection"), self.enabled))
+				self.list.append((_("Your receiver does not have an internet connection"), self.enabled))
 		elif self.index == self.STATE_CHOISE_CHANNELLIST:
-			self.list.append(getConfigListEntry(_("Install channel list"), self.enabled))
+			self.list.append((_("Install channel list"), self.enabled))
 			if self.enabled.value:
-				self.list.append(getConfigListEntry(_("Channel list type"), self.channellist_type))
+				self.list.append((_("Channel list type"), self.channellist_type))
 		elif self.index == self.INSTALL_PLUGINS:
-			self.list.append(getConfigListEntry(_("No, I do not want to install plugins"), self.noplugins))
-			self.list.append(getConfigListEntry(_("Yes, I do want to install plugins"), self.doplugins))
+			self.list.append((_("No, I do not want to install plugins"), self.noplugins))
+			self.list.append((_("Yes, I do want to install plugins"), self.doplugins))
 		elif self.index == self.SCAN:
-			self.list.append(getConfigListEntry(_("I do not want to perform any service scans"), self.noscan))
-			self.list.append(getConfigListEntry(_("Do an automatic service scan now"), self.autoscan))
-			self.list.append(getConfigListEntry(_("Do a manual service scan now"), self.manualscan))
+			self.list.append((_("I do not want to perform any service scans"), self.noscan))
+			self.list.append((_("Do an automatic service scan now"), self.autoscan))
+			self.list.append((_("Do a manual service scan now"), self.manualscan))
 			from Plugins.SystemPlugins.FastScan.plugin import getProviderList
 			if getProviderList():
-				self.list.append(getConfigListEntry(_("Do a fast service scan now"), self.fastscan))
+				self.list.append((_("Do a fast service scan now"), self.fastscan))
 			from Components.NimManager import nimmanager
 			if nimmanager.getEnabledNimListOfType("DVB-C"):
-				self.list.append(getConfigListEntry(_("Do a cable service scan now"), self.cablescan))
+				self.list.append((_("Do a cable service scan now"), self.cablescan))
 		self["config"].list = self.list
-		self["config"].l.setList(self.list)
 
 	def keyLeft(self):
 		if self.index == 0:
@@ -129,7 +129,7 @@ class InstallWizard(Screen, ConfigListScreen):
 			self.doNextStep = True
 		elif self.index == self.INSTALL_PLUGINS:
 			if self["config"].getCurrent()[1] == self.doplugins:
-				from PluginBrowser import PluginDownloadBrowser
+				from Screens.PluginBrowser import PluginDownloadBrowser
 				self.session.open(PluginDownloadBrowser, 0)
 			self.doNextStep = True
 		elif self.index == self.SCAN:
@@ -152,7 +152,7 @@ class InstallWizard(Screen, ConfigListScreen):
 class InstallWizardOpkgUpdater(Screen):
 	skin = """
 	<screen position="c-300,c-25" size="600,50" title=" ">
-		<widget source="statusbar" render="Label" position="10,5" zPosition="10" size="e-10,30" halign="center" valign="center" font="Regular;22" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
+		<widget source="statusbar" render="Label" position="10,5" zPosition="10" size="e-10,30" horizontalAlignment="center" verticalAlignment="center" font="Regular;22" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 	</screen>"""
 
 	def __init__(self, session, index, info, cmd, pkg=None):
