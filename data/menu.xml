@@ -13,6 +13,47 @@
 	<code> .. code .. </code>
 		"exec"s code
 -->
+
+
+       
+        <!-- Menu /  by lululla-->
+        <menu weight="0" level="1" text="Menu NSS" entryID="NSSAT">
+            <id val="NSSAT" />  
+
+            <item weight="0" level="0" text="NSS Addon Manager" entryID="NSSAT">  
+        <code>
+from Plugins.Extensions.nssaddon.plugin import *
+self.session.open(HomeNss)
+</code>
+            </item>  
+
+            <!--
+ 			<item weight="5" level="0" text="Timers" entryID="timer_edit"><screen module="TimerEdit" screen="TimerEditList" /></item>
+			<item weight="8" level="0" text="CronTimers" entryID="crontimer_edit"><screen module="CronTimer" screen="CronTimers" /></item>
+            -->
+
+            <item weight="10" level="0" text="NSS Softcam Manager" entryID="NSSAT">  
+        <code>
+from Plugins.Extensions.nssaddon.CamEx import *
+self.session.open(NSSCamsManager)
+</code>
+            </item>  
+
+
+            <item weight="14" level="0" text="NSS oZeta Skin Setup" entryID="NSSAT"> 
+			<item level="20" text="About" entryID="about_screen"><screen module="About"/></item>
+            
+        <code>
+from Plugins.Extensions.oZetaNSS.plugin import *
+self.session.open(oZetaNSS)
+</code>
+            </item>
+
+        </menu>
+        <!-- Menu /  by lululla-->   
+        
+
+
 		<item level="0" text="Timer" entryID="timer_edit"><screen module="TimerEdit" screen="TimerEditList"/></item>
 		<item level="1" text="VCR scart" entryID="scart_switch" configcondition="config.usage.show_vcr_scart" requires="ScartSwitch"><code>self.session.scart.VCRSbChanged(3)</code></item>
 
