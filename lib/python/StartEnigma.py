@@ -6,6 +6,7 @@ profile("PYTHON_START")
 # Don't remove this line. It may seem to do nothing, but if removed,
 # it will break output redirection for crash logs.
 import Tools.RedirectOutput
+
 import enigma
 import eConsoleImpl
 import eBaseImpl
@@ -30,7 +31,7 @@ from Screens.SimpleSummary import SimpleSummary
 from sys import stdout
 
 profile("Bouquets")
-from Components.config import config, configfile, ConfigText, ConfigYesNo, ConfigInteger, NoSave
+from Components.config import config, ConfigSelection, configfile, ConfigText, ConfigYesNo, ConfigInteger, NoSave
 config.misc.load_unlinked_userbouquets = ConfigYesNo(default=True)
 
 
@@ -68,6 +69,17 @@ config.misc.prev_wakeup_time = ConfigInteger(default=0)
 config.misc.prev_wakeup_time_type = ConfigInteger(default=0)
 # 0 = RecordTimer, 1 = ZapTimer, 2 = Plugins, 3 = WakeupTimer
 config.misc.epgcache_filename = ConfigText(default="/media/hdd/epg.dat", fixed_size=False)
+
+
+# New Plugin Style  - <!-- add @lululla -->  
+config.misc.plugin_style = ConfigSelection(default="normallstyle", choices=[
+	("normallstyle", _("Normall Style")),
+	("newstyle1", _("New Style 1")),
+	("newstyle2", _("New Style 2")),
+	("newstyle3", _("New Style 3")),
+	("newstyle4", _("New Style 4")),
+	("newstyle5", _("New Style 5")),
+	("newstyle6", _("New Style 6"))])                                                                          
 
 
 def setEPGCachePath(configElement):
@@ -210,6 +222,7 @@ class Session:
 		callback = self.current_dialog.callback
 
 		retval = self.current_dialog.returnValue
+                                                
 
 		if self.current_dialog.isTmp:
 			self.current_dialog.doClose()
@@ -234,6 +247,7 @@ class Session:
 
 		c.saveKeyboardMode()
 		c.execBegin()
+                                             
 
 		# when execBegin opened a new dialog, don't bother showing the old one.
 		if c == self.current_dialog and do_show:
@@ -253,10 +267,12 @@ class Session:
 
 	def instantiateDialog(self, screen, *arguments, **kwargs):
 		return self.doInstantiateDialog(screen, arguments, kwargs, self.desktop)
+                                                                     
 
 	def deleteDialog(self, screen):
 		screen.hide()
 		screen.doClose()
+                                                                
 
 	def instantiateSummaryDialog(self, screen, **kwargs):
 		if self.summary_desktop is not None:
@@ -283,6 +299,9 @@ class Session:
 		if self.current_dialog is not None:
 			self.dialog_stack.append((self.current_dialog, self.current_dialog.shown))
 			self.execEnd(last=False)
+                                                      
+                                                   
+                                                      
 
 	def popCurrent(self):
 		if self.dialog_stack:
@@ -307,6 +326,7 @@ class Session:
 		if self.dialog_stack and not self.in_exec:
 			raise RuntimeError("modal open are allowed only from a screen which is modal!")
 			# ...unless it's the very first screen.
+                                    
 
 		self.pushCurrent()
 		dlg = self.current_dialog = self.instantiateDialog(screen, *arguments, **kwargs)
@@ -370,6 +390,17 @@ class PowerKey:
 			self.session.open(Screens.Standby.TryQuitMainloop, 1)
 		else:
 			return 0
+                                                                                   
+                                                       
+                                                                           
+                                                            
+                                                             
+                                                                                          
+                                                                  
+                                 
+                   
+  
+                                                                            
 
 	def powerup(self):
 		if not Screens.Standby.inStandby and self.session.current_dialog and self.session.current_dialog.ALLOW_SUSPEND and self.session.in_exec:
