@@ -13,7 +13,6 @@
         <!-- add @lululla -->                                                                                                                                           
 		<item level="0" text="Plugin Browser Style (Need Restart GUI)" description="This option allows you to select the plugin browser style (Need Restart GUI).">config.misc.plugin_style</item>
 		<!-- add end @lululla -->  
-        
         <item level="0" text="Show menu or plugin numbers" description="This option allows you to show menu and/or plugin number quick links.">config.usage.menu_show_numbers</item>
 		<item level="2" text="Show softcam setup in extensions menu" description="This option allows you to add the softcam setup in the extensions menu." requires="HasSoftcamInstalled">config.misc.softcam_setup.extension_menu</item>
 		<item level="1" text="Zap mode" requires="ZapMode" description="Configure the way in which the receiver changes channels.">config.misc.zapmode</item>
@@ -257,14 +256,5 @@
 		<item level="0" text="Alternative numbering mode" description="When enabled, channel numbering will start at '1' for each bouquet.">config.usage.alternative_number_mode</item>
 		<item level="0" text="Show picons in channel selection list" description="Configure if service picons will be shown in the channel selection list.">config.usage.service_icon_enable</item>
 		<item level="0" text="Enable HDMI-CEC" description="When enabled, HDMI-CEC is enabled with standard configuration" requires="HasHDMI-CEC">config.hdmicec.enabled</item>
-
-        <!-- add @lululla --> 
-		<item level="0" text="Use DHCP" description="When enabled, use DHCP for the IP configuration.">config.network.dhcp</item>
-		<item level="0" text="IP address" description="Configure the IP address.">config.network.ip</item>
-		<item level="0" text="Netmask" description="Configure the netmask.">config.network.netmask</item>
-		<item level="0" text="Gateway" description="Configure the gateway.">config.network.gateway</item>
-		<item level="0" text="Nameserver" description="Configure the nameserver (DNS).">config.network.dns</item>
-		<item level="0" text="Activate network settings" description="Activate the configured network settings.">config.network.activate</item>
-   
     </setup>
 </setupxml>
