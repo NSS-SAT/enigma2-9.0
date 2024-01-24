@@ -390,17 +390,6 @@ class PowerKey:
 			self.session.open(Screens.Standby.TryQuitMainloop, 1)
 		else:
 			return 0
-                                                                                   
-                                                       
-                                                                           
-                                                            
-                                                             
-                                                                                          
-                                                                  
-                                 
-                   
-  
-                                                                            
 
 	def powerup(self):
 		if not Screens.Standby.inStandby and self.session.current_dialog and self.session.current_dialog.ALLOW_SUSPEND and self.session.in_exec:
