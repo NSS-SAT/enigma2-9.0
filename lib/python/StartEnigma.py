@@ -71,7 +71,7 @@ config.misc.prev_wakeup_time_type = ConfigInteger(default=0)
 config.misc.epgcache_filename = ConfigText(default="/media/hdd/epg.dat", fixed_size=False)
 
 
-# New Plugin Style  - <!-- add @lululla -->  
+# New Plugin Style  - <!-- add @lululla -->
 config.misc.plugin_style = ConfigSelection(default="normallstyle", choices=[
 	("normallstyle", _("Normall Style")),
 	("newstyle1", _("New Style 1")),
@@ -79,7 +79,7 @@ config.misc.plugin_style = ConfigSelection(default="normallstyle", choices=[
 	("newstyle3", _("New Style 3")),
 	("newstyle4", _("New Style 4")),
 	("newstyle5", _("New Style 5")),
-	("newstyle6", _("New Style 6"))])                                                                          
+	("newstyle6", _("New Style 6"))])
 
 
 def setEPGCachePath(configElement):
@@ -222,7 +222,7 @@ class Session:
 		callback = self.current_dialog.callback
 
 		retval = self.current_dialog.returnValue
-                                                
+
 
 		if self.current_dialog.isTmp:
 			self.current_dialog.doClose()
@@ -247,7 +247,7 @@ class Session:
 
 		c.saveKeyboardMode()
 		c.execBegin()
-                                             
+
 
 		# when execBegin opened a new dialog, don't bother showing the old one.
 		if c == self.current_dialog and do_show:
@@ -267,12 +267,12 @@ class Session:
 
 	def instantiateDialog(self, screen, *arguments, **kwargs):
 		return self.doInstantiateDialog(screen, arguments, kwargs, self.desktop)
-                                                                     
+
 
 	def deleteDialog(self, screen):
 		screen.hide()
 		screen.doClose()
-                                                                
+
 
 	def instantiateSummaryDialog(self, screen, **kwargs):
 		if self.summary_desktop is not None:
@@ -299,9 +299,9 @@ class Session:
 		if self.current_dialog is not None:
 			self.dialog_stack.append((self.current_dialog, self.current_dialog.shown))
 			self.execEnd(last=False)
-                                                      
-                                                   
-                                                      
+
+
+
 
 	def popCurrent(self):
 		if self.dialog_stack:
@@ -326,7 +326,6 @@ class Session:
 		if self.dialog_stack and not self.in_exec:
 			raise RuntimeError("modal open are allowed only from a screen which is modal!")
 			# ...unless it's the very first screen.
-                                    
 
 		self.pushCurrent()
 		dlg = self.current_dialog = self.instantiateDialog(screen, *arguments, **kwargs)
