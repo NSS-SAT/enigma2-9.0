@@ -213,7 +213,7 @@ class SelectImage(Screen):
 		if "://" in currentSelected[0][1] or currentSelected[0][1] in ["Expander", "Waiter"]:
 			self["key_yellow"].setText(_("Initialize Multiboot") if SystemInfo["canKexec"] else "")
 		else:
-			self["key_yellow"].setText(_("Elimina immagine"))
+			self["key_yellow"].setText(_("Delete image"))
 		if currentSelected[0][1] == "Waiter":
 			self["key_green"].setText("")
 		else:
@@ -544,7 +544,7 @@ class MultibootSelection(SelectImage):
 
 		if list12:
 			self.blue = True
-			self["key_blue"].setText(_("Ordina per modalità") if config.usage.multiboot_order.value else _("Ordina per slot"))
+			self["key_blue"].setText(_("Order by modes") if config.usage.multiboot_order.value else _("Order by slots"))
 			list += list12
 			list = sorted(list) if config.usage.multiboot_order.value else list
 
@@ -562,14 +562,14 @@ class MultibootSelection(SelectImage):
 		self.selectionChanged()
 
 	def deleteImage(self):
-		if self["key_yellow"].text == _("Ripristina le immagini cancellate"):
+		if self["key_yellow"].text == _("Restore deleted images"):
 			self.session.openWithCallback(self.deleteImageCallback, MessageBox, _("Are you sure to restore all deleted images"), simple=True)
-		elif self["key_yellow"].text == _("Elimina immagine"):
-			self.session.openWithCallback(self.deleteImageCallback, MessageBox, "%s:\n%s" % (_("Are you sure to Elimina immagine:"), self.currentSelected[0][0]), simple=True)
+		elif self["key_yellow"].text == _("Delete Image"):
+			self.session.openWithCallback(self.deleteImageCallback, MessageBox, "%s:\n%s" % (_("Are you sure to delete image:"), self.currentSelected[0][0]), simple=True)
 
 	def deleteImageCallback(self, answer):
 		if answer:
-			if self["key_yellow"].text == _("Ripristina le immagini cancellate"):
+			if self["key_yellow"].text == _("Restore deleted images"):
 				restoreImages()
 			else:
 				deleteImage(self.currentSelected[0][1][0])
@@ -616,9 +616,9 @@ class MultibootSelection(SelectImage):
 	def selectionChanged(self):
 		self.currentSelected = self["list"].l.getCurrentSelection()
 		if isinstance(self.currentSelected[0][1], tuple) and self.currentimageslot != self.currentSelected[0][1][0]:
-			self["key_yellow"].setText(_("Elimina immagine"))
+			self["key_yellow"].setText(_("Delete Image"))
 		elif self.deletedImagesExists:
-			self["key_yellow"].setText(_("Ripristina le immagini cancellate"))
+			self["key_yellow"].setText(_("Restore deleted images"))
 		else:
 			self["key_yellow"].setText("")
 
