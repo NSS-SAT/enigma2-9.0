@@ -5847,6 +5847,12 @@ msgstr "Opzioni di disabilitazione del timer"
 msgid "Orbital position"
 msgstr "Posizione orbitale"
 
+msgid "Order by modes"
+msgstr "Ordina per modalità"
+
+msgid "Order by slots"
+msgstr "Ordina per slot"
+
 msgid "Ordinary"
 msgstr "Ordinario"
 
