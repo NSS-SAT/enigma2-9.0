@@ -2688,7 +2688,6 @@ msgstr "Ritardo (ms) tra i caratteri scorrevoli sullo schermo."
 msgid "Delete"
 msgstr "Eliminare"
 
-#, fuzzy
 msgid "Delete Image"
 msgstr "Eliminare l'immagine"
 
