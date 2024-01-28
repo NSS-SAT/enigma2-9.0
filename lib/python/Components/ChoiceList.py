@@ -8,11 +8,11 @@ from skin import applySkinFactor, fonts, parameters
 def ChoiceEntryComponent(key=None, text=["--"]):
 	res = [text]
 	if text[0] == "--":
-		x, y, w, h = parameters.get("ChoicelistDash", applySkinFactor(0, 0, 800, 25))
+		x, y, w, h = parameters.get("ChoicelistDash", applySkinFactor(0, 0, 900, 25))
 		res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 0, RT_HALIGN_LEFT, "-" * 200))
 	else:
 		if key:
-			x, y, w, h = parameters.get("ChoicelistName", applySkinFactor(45, 0, 800, 25))
+			x, y, w, h = parameters.get("ChoicelistName", applySkinFactor(45, 0, 900, 25))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 0, RT_HALIGN_LEFT, text[0]))
 			if key == "dummy":
 				png = None
@@ -30,7 +30,7 @@ def ChoiceEntryComponent(key=None, text=["--"]):
 				x, y, w, h = parameters.get("ChoicelistIcon", applySkinFactor(5, 0, 35, 25))
 				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHABLEND, x, y, w, h, png))
 		else:
-			x, y, w, h = parameters.get("ChoicelistNameSingle", applySkinFactor(5, 0, 800, 25))
+			x, y, w, h = parameters.get("ChoicelistNameSingle", applySkinFactor(5, 0, 900, 40))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 0, RT_HALIGN_LEFT, text[0]))
 	return res
 
