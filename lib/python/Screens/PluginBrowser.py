@@ -816,7 +816,7 @@ class PluginBrowserNew(Screen):
         self["PluginDownloadActions"] = ActionMap(["ColorActions", "SetupActions", "DirectionActions", "MenuActions"],
         {
             "red": self.delete,
-            # "green": self.download,
+            "yellow": self.download,
             "cancel": self.exit,
             "right": self.keyRight,
             "left": self.keyLeft,
