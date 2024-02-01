@@ -73,7 +73,7 @@ config.misc.epgcache_filename = ConfigText(default="/media/hdd/epg.dat", fixed_s
 
 # New Plugin Style  - <!-- add @lululla -->
 config.misc.plugin_style = ConfigSelection(default="normallstyle", choices=[
-	("normallstyle", _("Normall Style")),
+	("normallstyle", _("New Style 5")),
 	("newstyle1", _("New Style 1")),
 	("newstyle2", _("New Style 2")),
 	("newstyle3", _("New Style 3")),
