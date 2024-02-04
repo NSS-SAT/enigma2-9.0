@@ -38,10 +38,10 @@ config.misc.pluginbrowser.plugin_order = ConfigText(default="")
 PLUGIN_LIST = 0
 PLUGIN_GRID = 1
 config.pluginfilter = ConfigSubsection()
-config.pluginfilter.pluginLayout = ConfigSelection(default=PLUGIN_GRID, choices=[
+config.misc.pluginLayout = ConfigSelection(default=PLUGIN_GRID, choices=[
     (PLUGIN_LIST, _("View as list")),
     (PLUGIN_GRID, _("View as grid"))])
-config.pluginfilter.pluginstyle = ConfigSelection(default=5, choices=[
+config.misc.pluginstyle = ConfigSelection(default=5, choices=[
     (1, _("Style 1")),
     (2, _("Style 2")),
     (3, _("Style 3")),
@@ -751,7 +751,7 @@ class PluginBrowserNew(Screen):
         self.plugins = []
         self.current = 0
         self.current_page = 0
-        if config.pluginfilter.pluginstyle.value == 1:
+        if config.misc.pluginstyle.value == 1:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style1.jpg" transparent="1" zPosition="-1" />'
             else:
@@ -762,7 +762,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#00ffffff"
             self.secondaryColor = "#1b3c85"
             self.secondaryColorLabel = "#00ffc000"
-        elif config.pluginfilter.pluginstyle.value == 2:
+        elif config.misc.pluginstyle.value == 2:
             self.backgroundPixmap = ""
             self.backgroundColor = "#44000000"
             self.foregroundColor = "#000080ff"
@@ -770,7 +770,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#DCE1E3"
             self.secondaryColor = "#4e4e4e"
             self.secondaryColorLabel = "#00000000"
-        elif config.pluginfilter.pluginstyle.value == 3:
+        elif config.misc.pluginstyle.value == 3:
             self.backgroundPixmap = ""
             self.backgroundColor = "#21292A"
             self.foregroundColor = "#000080ff"
@@ -778,7 +778,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#DCE1E3"
             self.secondaryColor = "#39474F"
             self.secondaryColorLabel = "#00000000"
-        elif config.pluginfilter.pluginstyle.value == 4:
+        elif config.misc.pluginstyle.value == 4:
             self.backgroundPixmap = ""
             self.backgroundColor = "#44000000"
             self.foregroundColor = "#000080ff"
@@ -786,7 +786,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#00ffffff"
             self.secondaryColor = "#696969"
             self.secondaryColorLabel = "#00000000"
-        elif config.pluginfilter.pluginstyle.value == 5:
+        elif config.misc.pluginstyle.value == 5:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
             else:
@@ -797,7 +797,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#00ffffff"
             self.secondaryColor = "#1b3c85"
             self.secondaryColorLabel = "#00ffc000"
-        # elif config.pluginfilter.pluginstyle.value == 1:
+        # elif config.misc.pluginstyle.value == 1:
             # if isFullHD():
                 # self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
             # else:
@@ -808,7 +808,7 @@ class PluginBrowserNew(Screen):
             # self.primaryColorLabel = "#00ffffff"
             # self.secondaryColor = "#1b3c85"
             # self.secondaryColorLabel = "#00ffc000"
-        elif config.pluginfilter.pluginstyle.value == 6:
+        elif config.misc.pluginstyle.value == 6:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style6.jpg" transparent="1" zPosition="-1" />'
             else:
@@ -1258,8 +1258,8 @@ class PluginFilter(ConfigListScreen, Screen):
     def createSetup(self):
         self.editListEntry = None
         self.list = []
-        self.list.append((_("pluginLayout"), config.pluginfilter.pluginLayout, _("This allows you to change Plugin Browser layout")))
-        self.list.append((_("pluginstyle"), config.pluginfilter.pluginstyle, _("This allows you to change background of grid layout")))
+        self.list.append((_("pluginLayout"), config.misc.pluginLayout, _("This allows you to change Plugin Browser layout")))
+        self.list.append((_("pluginstyle"), config.misc.pluginstyle, _("This allows you to change background of grid layout")))
         self.list.append((_("drivers"), config.pluginfilter.drivers, _("This allows you to show drivers modules in downloads")))
         self.list.append((_("extensions"), config.pluginfilter.extensions, _("This allows you to show extensions modules in downloads")))
         self.list.append((_("systemplugins"), config.pluginfilter.systemplugins, _("This allows you to show systemplugins modules in downloads")))
@@ -1323,7 +1323,7 @@ class PluginDownloadManager(PluginDownloadBrowser):
         self.skinName = ["PluginDownloadBrowser"]
 
 
-if config.pluginfilter.pluginLayout.value == PLUGIN_GRID:
+if config.misc.pluginLayout.value == PLUGIN_GRID:
     PluginBrowser = PluginBrowserNew
 # if config.misc.plugin_style.value == "newstyle1" or config.misc.plugin_style.value == "newstyle2" or config.misc.plugin_style.value == "newstyle3" or config.misc.plugin_style.value == "newstyle4" or config.misc.plugin_style.value == "newstyle5" or config.misc.plugin_style.value == "newstyle6":
     # PluginBrowser = PluginBrowserNew
