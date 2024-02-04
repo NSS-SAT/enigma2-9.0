@@ -751,42 +751,7 @@ class PluginBrowserNew(Screen):
         self.plugins = []
         self.current = 0
         self.current_page = 0
-        if config.pluginfilter.pluginstyle.value == 5:
-            self.backgroundPixmap = ""
-            self.backgroundColor = "#44000000"
-            self.foregroundColor = "#000080ff"
-            self.primaryColor = "#282828"
-            self.primaryColorLabel = "#DCE1E3"
-            self.secondaryColor = "#4e4e4e"
-            self.secondaryColorLabel = "#00000000"
-        elif config.pluginfilter.pluginstyle.value == 2:
-            self.backgroundPixmap = ""
-            self.backgroundColor = "#21292A"
-            self.foregroundColor = "#000080ff"
-            self.primaryColor = "#191F22"
-            self.primaryColorLabel = "#DCE1E3"
-            self.secondaryColor = "#39474F"
-            self.secondaryColorLabel = "#00000000"
-        elif config.pluginfilter.pluginstyle.value == 3:
-            self.backgroundPixmap = ""
-            self.backgroundColor = "#44000000"
-            self.foregroundColor = "#000080ff"
-            self.primaryColor = "#16000000"
-            self.primaryColorLabel = "#00ffffff"
-            self.secondaryColor = "#696969"
-            self.secondaryColorLabel = "#00000000"
-        elif config.pluginfilter.pluginstyle.value == 4:
-            if isFullHD():
-                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style4.jpg" transparent="1" zPosition="-1" />'
-            else:
-                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style4hd.jpg" transparent="1" zPosition="-1" />'
-            self.backgroundColor = "#44000000"
-            self.foregroundColor = "#FFFFFF"
-            self.primaryColor = "#000000"
-            self.primaryColorLabel = "#00ffffff"
-            self.secondaryColor = "#1b3c85"
-            self.secondaryColorLabel = "#00ffc000"
-        elif config.pluginfilter.pluginstyle.value == 1:
+        if config.pluginfilter.pluginstyle.value == 1:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
             else:
@@ -797,6 +762,52 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#00ffffff"
             self.secondaryColor = "#1b3c85"
             self.secondaryColorLabel = "#00ffc000"
+        elif config.pluginfilter.pluginstyle.value == 2:
+            self.backgroundPixmap = ""
+            self.backgroundColor = "#44000000"
+            self.foregroundColor = "#000080ff"
+            self.primaryColor = "#282828"
+            self.primaryColorLabel = "#DCE1E3"
+            self.secondaryColor = "#4e4e4e"
+            self.secondaryColorLabel = "#00000000"
+        elif config.pluginfilter.pluginstyle.value == 3:
+            self.backgroundPixmap = ""
+            self.backgroundColor = "#21292A"
+            self.foregroundColor = "#000080ff"
+            self.primaryColor = "#191F22"
+            self.primaryColorLabel = "#DCE1E3"
+            self.secondaryColor = "#39474F"
+            self.secondaryColorLabel = "#00000000"
+        elif config.pluginfilter.pluginstyle.value == 4:
+            self.backgroundPixmap = ""
+            self.backgroundColor = "#44000000"
+            self.foregroundColor = "#000080ff"
+            self.primaryColor = "#16000000"
+            self.primaryColorLabel = "#00ffffff"
+            self.secondaryColor = "#696969"
+            self.secondaryColorLabel = "#00000000"
+        elif config.pluginfilter.pluginstyle.value == 5:
+            if isFullHD():
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style4.jpg" transparent="1" zPosition="-1" />'
+            else:
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style4hd.jpg" transparent="1" zPosition="-1" />'
+            self.backgroundColor = "#44000000"
+            self.foregroundColor = "#FFFFFF"
+            self.primaryColor = "#000000"
+            self.primaryColorLabel = "#00ffffff"
+            self.secondaryColor = "#1b3c85"
+            self.secondaryColorLabel = "#00ffc000"
+        # elif config.pluginfilter.pluginstyle.value == 1:
+            # if isFullHD():
+                # self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
+            # else:
+                # self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style5hd.jpg" transparent="1" zPosition="-1" />'
+            # self.backgroundColor = "#44000000"
+            # self.foregroundColor = "#000080ff"
+            # self.primaryColor = "#000000"
+            # self.primaryColorLabel = "#00ffffff"
+            # self.secondaryColor = "#1b3c85"
+            # self.secondaryColorLabel = "#00ffc000"
         elif config.pluginfilter.pluginstyle.value == 6:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style6.jpg" transparent="1" zPosition="-1" />'
