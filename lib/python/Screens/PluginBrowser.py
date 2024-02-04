@@ -41,7 +41,7 @@ config.pluginfilter = ConfigSubsection()
 config.pluginfilter.pluginLayout = ConfigSelection(default=PLUGIN_GRID, choices=[
     (PLUGIN_LIST, _("View as list")),
     (PLUGIN_GRID, _("View as grid"))])
-config.pluginfilter.pluginstyle = ConfigSelection(default=1, choices=[
+config.pluginfilter.pluginstyle = ConfigSelection(default=5, choices=[
     (1, _("Style 1")),
     (2, _("Style 2")),
     (3, _("Style 3")),
@@ -751,7 +751,7 @@ class PluginBrowserNew(Screen):
         self.plugins = []
         self.current = 0
         self.current_page = 0
-        if config.pluginfilter.pluginstyle.value == 1:
+        if config.pluginfilter.pluginstyle.value == 5:
             self.backgroundPixmap = ""
             self.backgroundColor = "#44000000"
             self.foregroundColor = "#000080ff"
@@ -786,7 +786,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#00ffffff"
             self.secondaryColor = "#1b3c85"
             self.secondaryColorLabel = "#00ffc000"
-        elif config.pluginfilter.pluginstyle.value == 5:
+        elif config.pluginfilter.pluginstyle.value == 1:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
             else:
