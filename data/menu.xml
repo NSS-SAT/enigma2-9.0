@@ -224,6 +224,5 @@ self.session.openWithCallback(msgClosed, FactoryReset)
         <item text="Restart" entryID="restart">
             <screen module="Standby" screen="TryQuitMainloop">2</screen>
         </item>
-
     </menu>
 </menu>
