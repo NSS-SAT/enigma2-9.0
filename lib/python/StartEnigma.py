@@ -72,14 +72,14 @@ config.misc.epgcache_filename = ConfigText(default="/media/hdd/epg.dat", fixed_s
 
 
 # New Plugin Style  - <!-- add @lululla -->
-config.misc.plugin_style = ConfigSelection(default="normallstyle", choices=[
-	("normallstyle", _("New Style 5")),
-	("newstyle1", _("New Style 1")),
-	("newstyle2", _("New Style 2")),
-	("newstyle3", _("New Style 3")),
-	("newstyle4", _("New Style 4")),
-	("newstyle5", _("New Style 5")),
-	("newstyle6", _("New Style 6"))])
+# config.misc.plugin_style = ConfigSelection(default="New Style 5", choices=[
+	# ("normallstyle", _("New Style 5")),
+	# ("newstyle1", _("New Style 1")),
+	# ("newstyle2", _("New Style 2")),
+	# ("newstyle3", _("New Style 3")),
+	# ("newstyle4", _("New Style 4")),
+	# ("newstyle5", _("New Style 5")),
+	# ("newstyle6", _("New Style 6"))])
 
 
 def setEPGCachePath(configElement):
@@ -529,14 +529,13 @@ def runScreenTest():
 	from Screens.SleepTimerEdit import isNextWakeupTime
 	#get currentTime
 	nowTime = time()
-	wakeupList = [
+	wakeupList = sorted([
 		x for x in ((session.nav.RecordTimer.getNextRecordingTime(), 0),
 					(session.nav.RecordTimer.getNextZapTime(isWakeup=True), 1),
 					(plugins.getNextWakeupTime(), 2),
 					(isNextWakeupTime(), 3))
 		if x[0] != -1
-	]
-	wakeupList.sort()
+	])
 	if wakeupList:
 		from time import strftime
 		startTime = wakeupList[0]
@@ -544,7 +543,7 @@ def runScreenTest():
 			wptime = nowTime + 30  # so switch back on in 30 seconds
 		else:
 			wptime = startTime[0] - 240
-		if not config.misc.useTransponderTime.value:
+		if config.misc.SyncTimeUsing.value != "0":
 			print("[StartEnigma] DVB time sync disabled... so set RTC now to current linux time!", strftime("%Y/%m/%d %H:%M", localtime(nowTime)))
 			setRTCtime(nowTime)
 		print("[StartEnigma] Set wakeup time to", strftime("%Y/%m/%d %H:%M", localtime(wptime)))
