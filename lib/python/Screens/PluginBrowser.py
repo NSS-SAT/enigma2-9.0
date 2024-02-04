@@ -41,7 +41,7 @@ config.pluginfilter = ConfigSubsection()
 config.misc.pluginLayout = ConfigSelection(default=PLUGIN_GRID, choices=[
     (PLUGIN_LIST, _("View as list")),
     (PLUGIN_GRID, _("View as grid"))])
-config.misc.pluginstyle = ConfigSelection(default=5, choices=[
+config.misc.pluginstyle = ConfigSelection(default=1, choices=[
     (1, _("Style 1")),
     (2, _("Style 2")),
     (3, _("Style 3")),
