@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Components import Opkg
+# from Components import Opkg
 from Components.ActionMap import ActionMap, NumberActionMap, HelpableActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.Harddisk import harddiskmanager
@@ -11,9 +11,9 @@ from Components.Pixmap import Pixmap
 from Components.PluginComponent import plugins
 from Components.PluginList import PluginCategoryComponent, PluginDownloadComponent
 from Components.PluginList import PluginList, PluginEntryComponent
-from Components.ServiceList import refreshServiceList
+# from Components.ServiceList import refreshServiceList
 from Components.Sources.StaticText import StaticText
-from Components.SystemInfo import SystemInfo, hassoftcaminstalled
+# from Components.SystemInfo import hassoftcaminstalled
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigText, configfile
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
@@ -28,9 +28,9 @@ from os import system, unlink
 from os.path import normpath
 from re import compile
 from skin import parseColor
-from time import time
+# from time import time
 import math
-import os
+# import os
 
 language.addCallback(plugins.reloadPlugins)
 config.misc.pluginbrowser = ConfigSubsection()
@@ -753,9 +753,9 @@ class PluginBrowserNew(Screen):
         self.current_page = 0
         if config.pluginfilter.pluginstyle.value == 1:
             if isFullHD():
-                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style1.jpg" transparent="1" zPosition="-1" />'
             else:
-                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style5hd.jpg" transparent="1" zPosition="-1" />'
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style1hd.jpg" transparent="1" zPosition="-1" />'
             self.backgroundColor = "#44000000"
             self.foregroundColor = "#000080ff"
             self.primaryColor = "#000000"
@@ -788,9 +788,9 @@ class PluginBrowserNew(Screen):
             self.secondaryColorLabel = "#00000000"
         elif config.pluginfilter.pluginstyle.value == 5:
             if isFullHD():
-                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style4.jpg" transparent="1" zPosition="-1" />'
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
             else:
-                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style4hd.jpg" transparent="1" zPosition="-1" />'
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style5hd.jpg" transparent="1" zPosition="-1" />'
             self.backgroundColor = "#44000000"
             self.foregroundColor = "#FFFFFF"
             self.primaryColor = "#000000"
@@ -1036,19 +1036,19 @@ class PluginBrowserNew(Screen):
             x += 1
             count += 1
             if isFullHD():
-                skincontent += '<widget backgroundColor="'+self.primaryColor+'" name="plugin_' + str(x) + '" position="' + str(posx) + ',' + str(posy) + '" size="' + iconsize + '" />'
-                skincontent += '<widget foregroundColor="'+self.primaryColorLabel+'" name="label_'+str(x)+'" position="'+str(posx+10)+','+str(posy+139)+'" size="220,84" zPosition="3" font="Regular;32" horizontalAlignment="center" verticalAlignment="center" transparent="1" />'
-                skincontent += '<widget  name="icon_'+str(x)+'" position="'+str(posx+30)+','+str(posy+40)+'" size="180,80" zPosition="3" alphaTest="on" transparent="1" />'
+                skincontent += '<widget backgroundColor="' + self.primaryColor + '" name="plugin_' + str(x) + '" position="' + str(posx) + ',' + str(posy) + '" size="' + iconsize + '" />'
+                skincontent += '<widget foregroundColor="' + self.primaryColorLabel + '" name="label_' + str(x) + '" position="' + str(posx + 10) + ',' + str(posy + 139) + '" size="220,84" zPosition="3" font="Regular;32" horizontalAlignment="center" verticalAlignment="center" transparent="1" />'
+                skincontent += '<widget  name="icon_' + str(x) + '" position="' + str(posx + 30) + ',' + str(posy + 40) + '" size="180,80" zPosition="3" alphaTest="on" transparent="1" />'
             else:
-                skincontent += '<widget backgroundColor="'+self.primaryColor+'" name="plugin_' + str(x) + '" position="' + str(posx) + ',' + str(posy) + '" size="' + iconsize + '" />'
-                skincontent += '<widget foregroundColor="'+self.primaryColorLabel+'" name="label_'+str(x)+'" position="'+str(posx)+','+str(posy+20)+'" size="150,65" zPosition="3" font="Regular;22" horizontalAlignment="center" verticalAlignment="center" transparent="1" />'
-                skincontent += '<widget  name="icon_'+str(x)+'" position="'+str(posx+10)+','+str(posy+20)+'" size="150,50" zPosition="3" alphaTest="on" transparent="1" />'
+                skincontent += '<widget backgroundColor="' + self.primaryColor + '" name="plugin_' + str(x) + '" position="' + str(posx) + ',' + str(posy) + '" size="' + iconsize + '" />'
+                skincontent += '<widget foregroundColor="' + self.primaryColorLabel + '" name="label_' + str(x) + '" position="' + str(posx) + ',' + str(posy + 20) + '" size="150,65" zPosition="3" font="Regular;22" horizontalAlignment="center" verticalAlignment="center" transparent="1" />'
+                skincontent += '<widget  name="icon_' + str(x) + '" position="' + str(posx + 10) + ',' + str(posy + 20) + '" size="150,50" zPosition="3" alphaTest="on" transparent="1" />'
             self.plugins_pos.append((posx, posy))
             self.plugins.append((p.name, p.description, p, p.icon))
-            self["plugin_"+str(x)] = Label()
-            self["label_"+str(x)] = Label()
-            self["icon_"+str(x)] = Pixmap()
-            self["label_"+str(x)].setText(p.name)
+            self["plugin_" + str(x)] = Label()
+            self["label_" + str(x)] = Label()
+            self["icon_" + str(x)] = Pixmap()
+            self["label_" + str(x)].setText(p.name)
             posx += posxplus
             list_dummy.append(x)
             if len(list_dummy) == 7:
@@ -1065,11 +1065,11 @@ class PluginBrowserNew(Screen):
 
         print('skin: ', skin)
 
-        self.total_pages = int(math.ceil(float(len(self.plugins))/21))
+        self.total_pages = int(math.ceil(float(len(self.plugins)) / 21))
         count = 1
         counting = 1
         list_dummy = []
-        for x in range(1, len(self.plugins)+1):
+        for x in range(1, len(self.plugins) + 1):
             if count == 21:
                 count += 1
                 counting += 1
@@ -1081,7 +1081,7 @@ class PluginBrowserNew(Screen):
                 count += 1
                 counting += 1
                 list_dummy.append(x)
-                if int(counting) == len(self.plugins)+1:
+                if int(counting) == len(self.plugins) + 1:
                     self.mainlist.append(list_dummy)
         return skin
 
@@ -1097,13 +1097,13 @@ class PluginBrowserNew(Screen):
         for x, elem in enumerate(self.plugins):
             x += 1
             icon = elem[3] or LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/plugin.png"))
-            self['icon_'+str(x)].instance.setScale(1)
-            self['icon_'+str(x)].instance.setPixmap(icon)
+            self['icon_' + str(x)].instance.setScale(1)
+            self['icon_' + str(x)].instance.setPixmap(icon)
 
     def activeBox(self):
         for index, plugin in enumerate(self.plugins):
             index += 1
-            if index == self.current+1:
+            if index == self.current + 1:
                 self["plugin_description"].setText(plugin[1])
                 pos = self.plugins_pos[self.current]
                 if isFullHD():
@@ -1119,7 +1119,7 @@ class PluginBrowserNew(Screen):
                 self["label_" + str(index)].instance.setBackgroundColor(parseColor(self.secondaryColor))
                 self["label_" + str(index)].instance.setForegroundColor(parseColor(self.secondaryColorLabel))
             else:
-                pos = self.plugins_pos[index-1]
+                pos = self.plugins_pos[index - 1]
                 if isFullHD():
                     self["plugin_" + str(index)].instance.resize(eSize(250, 250))
                     self["plugin_" + str(index)].instance.move(ePoint(pos[0], pos[1]))
@@ -1140,7 +1140,7 @@ class PluginBrowserNew(Screen):
         plugin(session=self.session)
 
     def currentPage(self):
-        self['pages'].setText("Page {}/{}".format(self.current_page+1, self.total_pages))
+        self['pages'].setText("Page {}/{}".format(self.current_page + 1, self.total_pages))
 
     def keyRight(self):
         self.move(1, 'forward')
@@ -1160,10 +1160,10 @@ class PluginBrowserNew(Screen):
             self.current -= step
         else:
             self.current += step
-        if self.current > (len(ls)-1):
+        if self.current > (len(ls) - 1):
             self.current = 0
         if self.current < 0:
-            self.current = len(ls)-1
+            self.current = len(ls) - 1
         for i in range(self.total_pages):
             if ls[self.current] in self.mainlist[i]:
                 self.current_page = i
@@ -1321,6 +1321,7 @@ class PluginDownloadManager(PluginDownloadBrowser):
     def __init__(self, session):
         PluginDownloadBrowser.__init__(self, session=session, type=self.MANAGE)
         self.skinName = ["PluginDownloadBrowser"]
+
 
 if config.pluginfilter.pluginLayout.value == PLUGIN_GRID:
     PluginBrowser = PluginBrowserNew
