@@ -829,6 +829,7 @@ class PluginBrowserNew(Screen):
         {
             "red": self.delete,
             # "green": self.download,
+            "yellow": self.download,
             "cancel": self.exit,
             "right": self.keyRight,
             "left": self.keyLeft,
