@@ -1,7 +1,4 @@
-installdir = $(pkglibdir)/python/Plugins
+installdir = $(pkglibdir)/python/Plugins/NSs
 
-SUBDIRS = Extensions SystemPlugins PLi
-
-install_PYTHON =	\
-	__init__.py Plugin.py
+install_PYTHON = __init__.py
 
