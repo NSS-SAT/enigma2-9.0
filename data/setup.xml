@@ -140,9 +140,12 @@
 			<item level="0" text="IP address" description="IP address">config.oscaminfo.ip</item>
 			<item level="0" text="Port" description="Port">config.oscaminfo.port</item>
 		</if>
-		<item level="0" text="Automatically update Client/Server View" description="Automatically update Client/Server View">config.oscaminfo.autoUpdate</item>
-		<item level="0" text="Automatically update Log-Fullscreen View" description="Automatically update Log-Fullscreen View">config.oscaminfo.autoUpdateLog</item>
+		<item level="0" text="Automatically update Client/Server View" description="Automatically update Client/Server View">config.oscaminfo.autoupdate</item>
+		<item level="0" text="Update interval (in seconds)" description="Update interval (in seconds)">config.oscaminfo.intervall</item>        
+        
+		<!-- <item level="0" text="Automatically update Log-Fullscreen View" description="Automatically update Log-Fullscreen View">config.oscaminfo.autoUpdateLog</item> -->
 	</setup>
+
     <setup key="epgsettings" title="EPG settings">
         <item level="2" text="Show EIT now/next in infobar" description="When enabled, display the EIT now/next eventdata in infobar. When disabled, display now/next eventdata from the EPG cache instead.">config.usage.show_eit_nownext</item>
         <item level="0" text="Enable EIT EPG" description="Use EIT EPG information when it is available.">config.epg.eit</item>
