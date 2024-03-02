@@ -761,19 +761,29 @@ def InitUsageConfig():
     config.softcam.hideServerName = ConfigYesNo(default=False)
 
     config.oscaminfo = ConfigSubsection()
-    config.oscaminfo.userDataFromConf = ConfigYesNo(default=True)
+    config.oscaminfo.showInExtensions = ConfigYesNo(default=False)
+    config.oscaminfo.userdatafromconf = ConfigYesNo(default=True)
+    config.oscaminfo.autoupdate = ConfigYesNo(default=False)
     config.oscaminfo.username = ConfigText(default="username", fixed_size=False, visible_width=12)
     config.oscaminfo.password = ConfigPassword(default="password", fixed_size=False)
     config.oscaminfo.ip = ConfigIP(default=[127, 0, 0, 1], auto_jump=True)
     config.oscaminfo.port = ConfigInteger(default=16002, limits=(0, 65536))
-    choiceList = [
-        (0, _("Disabled"))
-    ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
-    config.oscaminfo.autoUpdate = ConfigSelection(default=10, choices=choiceList)
-    choiceList = [
-        (0, _("Disabled"))
-    ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
-    config.oscaminfo.autoUpdateLog = ConfigSelection(default=0, choices=choiceList)
+    config.oscaminfo.intervall = ConfigSelectionNumber(min=1, max=600, stepwidth=1, default=10, wraparound=True)
+    # config.oscaminfo = ConfigSubsection()
+    # config.oscaminfo.userDataFromConf = ConfigYesNo(default=True)
+    # config.oscaminfo.username = ConfigText(default="username", fixed_size=False, visible_width=12)
+    # config.oscaminfo.password = ConfigPassword(default="password", fixed_size=False)
+    # config.oscaminfo.ip = ConfigIP(default=[127, 0, 0, 1], auto_jump=True)
+    # config.oscaminfo.port = ConfigInteger(default=16002, limits=(0, 65536))
+    # choiceList = [
+        # (0, _("Disabled"))
+    # ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
+    # config.oscaminfo.autoUpdate = ConfigSelection(default=10, choices=choiceList)
+    
+    # choiceList = [
+        # (0, _("Disabled"))
+    # ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
+    # config.oscaminfo.autoUpdateLog = ConfigSelection(default=0, choices=choiceList)
     # BoxInfo.setItem("OScamInstalled", False)
 
     config.cccaminfo = ConfigSubsection()
@@ -791,6 +801,7 @@ def InitUsageConfig():
     config.cccaminfo.ecmInfoPositionY = ConfigInteger(default=50)
     config.cccaminfo.blacklist = ConfigText(default="/media/cf/CCcamInfo.blacklisted", fixed_size=False)
     config.cccaminfo.profiles = ConfigText(default="/media/cf/CCcamInfo.profiles", fixed_size=False)
+    
     config.streaming = ConfigSubsection()
     config.streaming.stream_ecm = ConfigYesNo(default=False)
     config.streaming.descramble = ConfigYesNo(default=True)
