@@ -79,7 +79,11 @@ config.misc.pluginstyle = ConfigSelection(default="New Style 5", choices=[
     ("newstyle3", _("New Style 3")),
     ("newstyle4", _("New Style 4")),
     ("newstyle5", _("New Style 5")),
-    ("newstyle6", _("New Style 6"))])
+    ("newstyle6", _("New Style 6")),
+    ("newstyle7", _("New Style 7")),
+    ("newstyle8", _("New Style 8")),
+    ("newstyle9", _("New Style 9")),
+    ])
 
 
 def setEPGCachePath(configElement):
@@ -299,9 +303,6 @@ class Session:
         if self.current_dialog is not None:
             self.dialog_stack.append((self.current_dialog, self.current_dialog.shown))
             self.execEnd(last=False)
-
-
-
 
     def popCurrent(self):
         if self.dialog_stack:
