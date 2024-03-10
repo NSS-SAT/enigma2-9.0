@@ -47,7 +47,11 @@ config.misc.pluginstyle = ConfigSelection(default=1, choices=[
     (3, _("Style 3")),
     (4, _("Style 4")),
     (5, _("Style 5")),
-    (6, _("Style 6"))])
+    (6, _("Style 6")),
+    (7, _("Style 7")),
+    (8, _("Style 8")),
+    (9, _("Style 9"))
+    ])
 config.pluginfilter.kernel = ConfigYesNo(default=False)
 config.pluginfilter.drivers = ConfigYesNo(default=True)
 config.pluginfilter.extensions = ConfigYesNo(default=True)
@@ -797,17 +801,6 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#00ffffff"
             self.secondaryColor = "#1b3c85"
             self.secondaryColorLabel = "#00ffc000"
-        # elif config.misc.pluginstyle.value == 1:
-            # if isFullHD():
-                # self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style5.jpg" transparent="1" zPosition="-1" />'
-            # else:
-                # self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style5hd.jpg" transparent="1" zPosition="-1" />'
-            # self.backgroundColor = "#44000000"
-            # self.foregroundColor = "#000080ff"
-            # self.primaryColor = "#000000"
-            # self.primaryColorLabel = "#00ffffff"
-            # self.secondaryColor = "#1b3c85"
-            # self.secondaryColorLabel = "#00ffc000"
         elif config.misc.pluginstyle.value == 6:
             if isFullHD():
                 self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style6.jpg" transparent="1" zPosition="-1" />'
@@ -818,7 +811,31 @@ class PluginBrowserNew(Screen):
             self.primaryColor = "#451b49"
             self.primaryColorLabel = "#DCE1E3"
             self.secondaryColor = "#725083"
+            self.secondaryColorLabel = "#00ffc000"            
+        elif config.misc.pluginstyle.value == 7:
+            if isFullHD():
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style7.jpg" transparent="1" zPosition="-1" />'
+            else:
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style5hd.jpg" transparent="1" zPosition="-1" />'
+            self.backgroundColor = "#44000000"
+            self.foregroundColor = "#000080ff"
+            self.primaryColor = "#000000"
+            self.primaryColorLabel = "#00ffffff"
+            self.secondaryColor = "#1b3c85"
             self.secondaryColorLabel = "#00ffc000"
+
+        elif config.misc.pluginstyle.value == 8:
+            if isFullHD():
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1920,1080" pixmap="skin_default/style8.jpg" transparent="1" zPosition="-1" />'
+            else:
+                self.backgroundPixmap = '<ePixmap position="0,0" size="1280,720" pixmap="skin_default/style6hd.jpg" transparent="1" zPosition="-1" />'
+            self.backgroundColor = "#44000000"
+            self.foregroundColor = "#000080ff"
+            self.primaryColor = "#451b49"
+            self.primaryColorLabel = "#DCE1E3"
+            self.secondaryColor = "#1b3c85"
+            self.secondaryColorLabel = "#00ffc000"
+            
         else:
             self.backgroundPixmap = ""
             self.backgroundColor = "#44000000"
@@ -827,6 +844,7 @@ class PluginBrowserNew(Screen):
             self.primaryColorLabel = "#DCE1E3"
             self.secondaryColor = "#4e4e4e"
             self.secondaryColorLabel = "#00000000"
+        
         self.skin = self.buildSkin()
         self.firsttime = True
         self.list = []
@@ -1017,6 +1035,7 @@ class PluginBrowserNew(Screen):
         posy = posystart
         list_dummy = []
         skincontent = ""
+        
         skin = """
             <screen name="PluginBrowserNew" position="%d,%d" size="%d,%d" flags="wfNoBorder" backgroundColor="%s">
                 %s
@@ -1062,9 +1081,7 @@ class PluginBrowserNew(Screen):
 
         skin += skincontent
         skin += '</screen>'
-
         print('skin: ', skin)
-
         self.total_pages = int(math.ceil(float(len(self.plugins)) / 21))
         count = 1
         counting = 1
