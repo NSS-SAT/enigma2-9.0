@@ -1276,6 +1276,7 @@ class PluginFilter(ConfigListScreen, Screen):
         self.editListEntry = None
         self.list = []
         self.list.append((_("pluginLayout"), config.misc.pluginLayout, _("This allows you to change Plugin Browser layout")))
+        # if config.misc.pluginLayout.value == PLUGIN_GRID:
         self.list.append((_("pluginstyle"), config.misc.pluginstyle, _("This allows you to change background of grid layout")))
         self.list.append((_("drivers"), config.pluginfilter.drivers, _("This allows you to show drivers modules in downloads")))
         self.list.append((_("extensions"), config.pluginfilter.extensions, _("This allows you to show extensions modules in downloads")))
