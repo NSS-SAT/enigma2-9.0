@@ -29,8 +29,8 @@ self.session.open(HomeNss)
             -->
         <item weight="10" level="0" text="NSS Softcam Manager" entryID="NssCam">
             <code>
-from Plugins.Extensions.nssManager.plugin import nssManager
-self.session.open(nssManager)  
+from Plugins.Extensions.Manager.plugin import Manager
+self.session.open(Manager)  
 <!--
 from Plugins.Extensions.nssaddon.CamEx import *
 self.session.open(NSSCamsManager)
