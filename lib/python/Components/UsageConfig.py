@@ -156,7 +156,7 @@ def InitUsageConfig():
     config.usage.leave_movieplayer_onExit = ConfigSelection(default="popup", choices=[
         ("no", _("no")), ("popup", _("With popup")), ("without popup", _("Without popup")), ("movielist", _("Return to movie list"))])
 
-    config.usage.setup_level = ConfigSelection(default="simple", choices=[
+    config.usage.setup_level = ConfigSelection(default="expert", choices=[
         ("simple", _("Normal")),
         ("intermediate", _("Advanced")),
         ("expert", _("Expert"))])
@@ -790,7 +790,7 @@ def InitUsageConfig():
         # (0, _("Disabled"))
     # ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
     # config.oscaminfo.autoUpdate = ConfigSelection(default=10, choices=choiceList)
-
+    
     # choiceList = [
         # (0, _("Disabled"))
     # ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
@@ -812,7 +812,7 @@ def InitUsageConfig():
     config.cccaminfo.ecmInfoPositionY = ConfigInteger(default=50)
     config.cccaminfo.blacklist = ConfigText(default="/media/cf/CCcamInfo.blacklisted", fixed_size=False)
     config.cccaminfo.profiles = ConfigText(default="/media/cf/CCcamInfo.profiles", fixed_size=False)
-
+    
     config.streaming = ConfigSubsection()
     config.streaming.stream_ecm = ConfigYesNo(default=False)
     config.streaming.descramble = ConfigYesNo(default=True)
