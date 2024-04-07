@@ -790,7 +790,6 @@ def InitUsageConfig():
         # (0, _("Disabled"))
     # ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
     # config.oscaminfo.autoUpdate = ConfigSelection(default=10, choices=choiceList)
-    
     # choiceList = [
         # (0, _("Disabled"))
     # ] + [(x, ngettext("%d Second", "%d Seconds", x) % x) for x in (2, 5, 10, 20, 30)] + [(x * 60, ngettext("%d Minute", "%d Minutes", x) % x) for x in (1, 2, 3)]
@@ -812,7 +811,6 @@ def InitUsageConfig():
     config.cccaminfo.ecmInfoPositionY = ConfigInteger(default=50)
     config.cccaminfo.blacklist = ConfigText(default="/media/cf/CCcamInfo.blacklisted", fixed_size=False)
     config.cccaminfo.profiles = ConfigText(default="/media/cf/CCcamInfo.profiles", fixed_size=False)
-    
     config.streaming = ConfigSubsection()
     config.streaming.stream_ecm = ConfigYesNo(default=False)
     config.streaming.descramble = ConfigYesNo(default=True)
