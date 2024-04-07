@@ -16,8 +16,8 @@
     <!-- Menu /  by lululla-->
     <menu weight="0" level="0" text="Menu NSS" entryID="MenuNss">
         <id val="NssMenu"/>
-		<!-- <screen module="MenuNss"/>						   -->
-        <item weight="0" level="0" text="NSS Addon Manager" entryID="NSSAddon">
+        <!-- <screen module="MenuNss"/>						   -->
+        <item weight="0" level="0" text="Addon Manager" entryID="NSSAddon">
             <code>
 from Plugins.Extensions.nssaddon.plugin import HomeNss
 self.session.open(HomeNss)
@@ -27,15 +27,14 @@ self.session.open(HomeNss)
         <item weight="5" level="0" text="Timers" entryID="timer_edit"><screen module="TimerEdit" screen="TimerEditList" /></item>
         <item weight="8" level="0" text="CronTimers" entryID="crontimer_edit"><screen module="CronTimer" screen="CronTimers" /></item>
         -->
-        <item weight="10" level="0" text="NSS Softcam Manager" entryID="NssCam">
+        <item weight="10" level="0" text="Softcam Manager" entryID="NssCam">
             <code>
 from Plugins.Extensions.Manager.plugin import Manager
 self.session.open(Manager)  
 
 </code>
         </item>
-            
-<!--
+        <!--
         <item weight="12" level="0" text="CCcamInfo" entryID="CCcamInfo">
             <code>
 from Screens.CCcamInfo import CCcamInfo
@@ -57,7 +56,7 @@ self.session.open(NcamInfo)
 </code>
         </item>
  -->
-        <item weight="15" level="0" text="NSS Skin Setup" entryID="AglareSetup">
+        <item weight="15" level="0" text="Skin Setup" entryID="AglareSetup">
             <code>
 from Plugins.Extensions.Aglare.plugin import AglareSetup
 self.session.open(AglareSetup)  
@@ -65,11 +64,8 @@ self.session.open(AglareSetup)
 from Plugins.Extensions.nssaddon.CamEx import *
 self.session.open(NSSCamsManager)
 -->
-</code>
-        </item>        
-        
-        
-        
+            </code>
+        </item>
         <!--
         <item weight="14" level="0" text="NSS oZeta Skin Setup" entryID="NssZeta">
             <code>
@@ -226,6 +222,32 @@ def msgClosed(ret):
 		from os import system, _exit
 		system("rm -R /etc/enigma2")
 		_exit(0)
+                                                    
+              
+            
+                                                                  
+            
+                                             
+                   
+        
+                              
+                                    
+                 
+                                                    
+              
+            
+                                                                      
+            
+                                               
+                   
+        
+           
+                                      
+                                                         
+                                                 
+                              
+                                    
+                     
 self.session.openWithCallback(msgClosed, FactoryReset)
 </code>
         </item>
