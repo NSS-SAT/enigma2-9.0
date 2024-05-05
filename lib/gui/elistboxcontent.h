@@ -20,6 +20,7 @@ public:
 	void invalidateEntry(int index);
 	void invalidate();
 	eSize getItemSize() { return m_itemsize; }
+	int getMaxItemTextWidth();
 #ifndef SWIG
 protected:
 	void cursorHome();
@@ -53,6 +54,7 @@ protected:
 	ePtr<gFont> m_font;
 	int m_itemheight;
 	int m_itemwidth;
+	int m_max_text_width;
 	int m_orientation;
 #endif
 };
@@ -93,6 +95,7 @@ public:
 	void resetClip();
 	void entryRemoved(int idx);
 	void setTemplate(SWIG_PYOBJECT(ePyObject) tmplate);
+	int getMaxItemTextWidth();
 private:
 	std::map<int, ePtr<gFont> > m_font;
 };
@@ -107,6 +110,8 @@ private:
 #define RT_VALIGN_CENTER 16
 #define RT_VALIGN_BOTTOM 32
 #define RT_WRAP 64
+#define RT_ELLIPSIS 128
+#define RT_BLEND 256
 #define BT_ALPHATEST 1
 #define BT_ALPHABLEND 2
 #define BT_SCALE 4
@@ -119,6 +124,16 @@ private:
 #define BT_VALIGN_CENTER 64
 #define BT_VALIGN_BOTTOM 128
 #define BT_ALIGN_CENTER BT_HALIGN_CENTER | BT_VALIGN_CENTER
+
+#define RADIUS_TOP_LEFT 1
+#define RADIUS_TOP_RIGHT 2
+#define RADIUS_TOP 3
+#define RADIUS_BOTTOM_LEFT 4
+#define RADIUS_BOTTOM_RIGHT 8
+#define RADIUS_BOTTOM 12
+#define RADIUS_LEFT 5
+#define RADIUS_RIGHT 10
+#define RADIUS_ALL RADIUS_TOP | RADIUS_BOTTOM
 
 #endif // SWIG
 
