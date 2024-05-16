@@ -8084,6 +8084,15 @@ msgstr "Mostrare il 'Lettore multimediale' nel menu principale"
 msgid "Show menu or plugin numbers"
 msgstr "Mostrare i numeri al menu e plugin"
 
+msgid "Choice picons folder"
+msgstr "Scegli il perorso picons"
+
+msgid "This option allows you to configure the path of the picons that will be displayed in the channel selection list. But also where they will be downloaded from the download."
+msgstr "Questa opzione consente di configurare il percorso dei picons che verranno visualizzati nell'elenco di selezione dei canali. Ma anche dove verranno scaricati dal download."
+
+msgid "This option allows you to select the plugin browser style (Need Restart GUI)."
+msgstr "Questa opzione consente di selezionare lo stile del browser del plugin (è necessario riavviare la GUI)."
+
 msgid "Show message when recording starts"
 msgstr "Mostrare un messaggio all'avvio della registrazione"
 
