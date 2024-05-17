@@ -107,7 +107,7 @@ msgid " - Unicable/JESS LNBs not found"
 msgstr ""
 
 msgid " Warning: the selected tuner should not use SCR Unicable type for LNBs because each tuner need a own SCR number."
-msgstr ""
+msgstr "Attenzione: il sintonizzatore selezionato non deve utilizzare il tipo Unicable SCR per gli LNB perché ogni sintonizzatore necessita di un proprio numero SCR"
 
 msgid " extensions."
 msgstr " estensioni."
@@ -122,7 +122,7 @@ msgid " packages selected."
 msgstr " pacchetti selezionati."
 
 msgid " unicable LNB input of rotor"
-msgstr ""
+msgstr "Ingresso LNB unicable del rotore"
 
 msgid " updates available."
 msgstr " aggiornamenti disponibili."
@@ -1634,13 +1634,13 @@ msgid "Cancel"
 msgstr "Annullare"
 
 msgid "Cancel any changes to the currently active skin"
-msgstr ""
+msgstr "Annulla qualsiasi modifica alla skin attualmente attiva"
 
 msgid "Cancel any changes to the currently active skin and exit all menus"
-msgstr ""
+msgstr "Annulla qualsiasi modifica alla skin attualmente attiva e esci da tutti i menu"
 
 msgid "Cancel any text changes and exit"
-msgstr ""
+msgstr "Annulla eventuali modifiche al testo ed esci"
 
 #, fuzzy
 msgid "Cancel execution?"
@@ -1782,7 +1782,7 @@ msgid "Check the internet connection again"
 msgstr "Verificare di nuovo la connessione a Internet"
 
 msgid "Checking ONID/TSID"
-msgstr ""
+msgstr "Controllo ONID/TSID"
 
 msgid "Checking filesystem..."
 msgstr "Verifica filesystem in corso..."
@@ -1853,7 +1853,7 @@ msgid "Clear playlist"
 msgstr "Eliminare la playlist"
 
 msgid "Client is streaming from this box!"
-msgstr ""
+msgstr "Il cliente sta trasmettendo in streaming da questa casella!"
 
 msgid "Clone TV screen to LCD"
 msgstr "Clonare lo schermo TV sul display LCD"
@@ -2610,7 +2610,7 @@ msgstr "Impostazioni predefinite"
 
 #, fuzzy
 msgid "Default timer type"
-msgstr "Eliminare il timer"
+msgstr "Tipo di timer predefinito"
 
 #, fuzzy
 msgid "Default+Picon"
@@ -3870,7 +3870,7 @@ msgid "Force legacy signal stats"
 msgstr "Forzare le statistiche del segnale legacy"
 
 msgid "Force zap to recording service in standby"
-msgstr ""
+msgstr "Forza lo zap sul servizio di registrazione in standby"
 
 msgid "Format"
 msgstr "Formato"
@@ -7646,7 +7646,7 @@ msgid "Select video mode"
 msgstr "Selezionare la modalità video"
 
 msgid "Select whether your SCR device is externally powered."
-msgstr ""
+msgstr "Seleziona se il tuo dispositivo SCR è alimentato esternamente."
 
 msgid "Select wireless network"
 msgstr "Selezionare una rete wireless"
@@ -8107,7 +8107,7 @@ msgstr "Mostrare la lista satelliti"
 
 #, fuzzy
 msgid "Show screen path"
-msgstr "Mostrare la gerarchia dei menu"
+msgstr "Mostra il percorso dello schermo"
 
 msgid "Show screensaver"
 msgstr "Mostrare il salvaschermo"
@@ -8164,7 +8164,7 @@ msgid "Show transponder info"
 msgstr "Mostrare le informazioni sul transponder"
 
 msgid "Show two lines per entry"
-msgstr ""
+msgstr "Mostra due righe per voce"
 
 msgid "Show underline characters in filenames"
 msgstr "Mostrare i caratteri di sottolineatura nei nomi dei file"
@@ -8267,7 +8267,7 @@ msgid "Skin Selection Actions"
 msgstr "Selezione azioni dell'interfaccia"
 
 msgid "SkinSelector: Restart GUI"
-msgstr ""
+msgstr "SkinSelector: riavvia la GUI"
 
 msgid "Skins"
 msgstr "Impostazioni skin"
