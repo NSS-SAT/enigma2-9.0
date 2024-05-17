@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: OpenPLi-enigma2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 11:54+0200\n"
-"PO-Revision-Date: 2020-05-16 18:46+0200\n"
+"PO-Revision-Date: 2024-05-16 21:05+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Previous-Translator: ngc1927 <ngc1927@gmail.com> 2016-06-12\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"Previous-Translator: ngc1927 <ngc1927@gmail.com> 2016-06-12\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid ""
@@ -3195,9 +3195,8 @@ msgstr "Incorporato"
 msgid "Emergency"
 msgstr ""
 
-#, fuzzy
 msgid "Empty Trash"
-msgstr "Slot vuoto"
+msgstr "Svuota il cestino"
 
 msgid "Empty slot"
 msgstr "Slot vuoto"
@@ -3244,11 +3243,10 @@ msgstr "Abilitare l'EPG Virgin"
 msgid "Enable auto cable scan"
 msgstr "Abilitare la ricerca automatica su cavo"
 
-#, fuzzy
 msgid "Enable auto fastscan"
 msgstr "Abilitare la ricerca veloce automatica"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Enable auto fastscan for %s"
 msgstr "Abilitare la scansione veloce per %s"
 
@@ -3276,7 +3274,6 @@ msgstr "Abilitare la modalità spostamento"
 msgid "Enable multiple bouquets"
 msgstr "Abilitare i bouquet multipli"
 
-#, fuzzy
 msgid "Enable or disable using HDMI-CEC."
 msgstr "Abilitare HDMI-CEC"
 
@@ -3426,9 +3423,9 @@ msgstr "Eritrea"
 msgid "Error"
 msgstr "Errore"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Error %s"
-msgstr "Errore"
+msgstr "Errore %s"
 
 msgid "Error code"
 msgstr "Codice errore"
@@ -3465,11 +3462,8 @@ msgstr "Errore di interruzione nel flusso!"
 msgid "Error when writing epg.dat on server"
 msgstr ""
 
-#, fuzzy
 msgid "Error while retreiving epg.dat from server"
-msgstr ""
-"Errore durante il recupero delle informazioni del timer di fallback\n"
-"%s"
+msgstr "Errore durante il recupero di epg.dat dal server"
 
 #, python-format
 msgid ""
@@ -3479,11 +3473,8 @@ msgstr ""
 "Errore durante il recupero delle informazioni del timer di fallback\n"
 "%s"
 
-#, fuzzy
 msgid "Error while retreiving location of epg.dat on server"
-msgstr ""
-"Errore durante il recupero delle informazioni del timer di fallback\n"
-"%s"
+msgstr "Errore durante il recupero della posizione di epg.dat sul server"
 
 #, python-format
 msgid ""
@@ -3638,9 +3629,8 @@ msgstr "Colorazione dei dialoghi nei sottotitoli esterni"
 msgid "External subtitle switch fonts"
 msgstr "Caratteri sostitutivi per i sottotitoli esterni"
 
-#, fuzzy
 msgid "Externally powered"
-msgstr "Archiviazione esterna %s"
+msgstr "Alimentazione esterna"
 
 msgid "Extra end time to ignore inactivity sleeptimer"
 msgstr "Orario finale aggiuntivo per ignorare il timer di spegnimento per inutilizzo"
@@ -3796,11 +3786,9 @@ msgstr "Posizionamento veloce"
 msgid "Fast forward speeds"
 msgstr "Velocità di avanzamento veloce"
 
-#, fuzzy
 msgid "FastScan"
 msgstr "Ricerca veloce"
 
-#, fuzzy
 msgid "Fastscan"
 msgstr "Ricerca veloce"
 
@@ -4141,9 +4129,8 @@ msgstr "Guyana"
 msgid "H"
 msgstr "H"
 
-#, fuzzy
 msgid "HD"
-msgstr "D"
+msgstr "HD"
 
 msgid "HD list"
 msgstr "Elenco HD"
@@ -4451,7 +4438,6 @@ msgstr "Immagine: "
 msgid "Import channels and/or EPG from remote receiver URL also when the receiver is getting out of standby"
 msgstr "Importare i canali e/o l'EPG dall'URL del ricevitore remoto anche quando il ricevitore sta uscendo dalla sospensione"
 
-#, fuzzy
 msgid "Import channels and/or EPG from remote receiver URL when receiver is booted"
 msgstr "Importare i canali dall'URL del ricevitore remoto quando il ricevitore viene avviato"
 
@@ -5102,12 +5088,11 @@ msgstr "Mayotte"
 msgid "Media player"
 msgstr "Lettore multimediale"
 
-#, fuzzy
 msgid "Media player: GStreamer, version "
 msgstr "Versione GStreamer: "
 
 msgid "Media player: ffmpeg, version "
-msgstr ""
+msgstr "Versione ffmpeg: "
 
 msgid "Media scanner"
 msgstr "Ricerca multimediale"
@@ -5239,44 +5224,35 @@ msgstr "Spostare il PIP"
 msgid "Move east"
 msgstr "Spostare verso Est"
 
-#, fuzzy
 msgid "Move the keyboard cursor down"
 msgstr "Spostare il cursore della tastiera virtuale verso il basso"
 
-#, fuzzy
 msgid "Move the keyboard cursor left"
 msgstr "Spostare il cursore della tastiera virtuale a sinistra"
 
-#, fuzzy
 msgid "Move the keyboard cursor right"
 msgstr "Spostare il cursore della tastiera virtuale a destra"
 
-#, fuzzy
 msgid "Move the keyboard cursor up"
 msgstr "Spostare il cursore della tastiera virtuale verso l'alto"
 
-#, fuzzy
 msgid "Move the text cursor left"
 msgstr "Spostare il cursore di testo del buffer verso sinistra"
 
-#, fuzzy
 msgid "Move the text cursor right"
 msgstr "Spostare il cursore di testo del buffer verso destra"
 
-#, fuzzy
 msgid "Move the text cursor to the first character"
 msgstr "Spostare il cursore di testo del buffer sul primo carattere"
 
-#, fuzzy
 msgid "Move the text cursor to the last character"
 msgstr "Spostare il cursore di testo del buffer sull'ultimo carattere"
 
 msgid "Move to position X"
 msgstr "Spostare alla posizione X"
 
-#, fuzzy
 msgid "Move to the next page"
-msgstr "Passare all'angolazione successiva"
+msgstr "Passare alla pagina successiva"
 
 #, fuzzy
 msgid "Move to the next skin"
@@ -5344,9 +5320,8 @@ msgstr "Abilitare la selezione bouquet nella Multi EPG"
 msgid "MultiType"
 msgstr "Multi tipo"
 
-#, fuzzy
 msgid "Multiboot image selector"
-msgstr "Selezionare tutti i Multisat"
+msgstr "Selettore di immagini in Multiboot"
 
 msgid "Multichannel PCM"
 msgstr "Multicanale PCM"
@@ -5986,9 +5961,8 @@ msgstr "Pausa riproduzione"
 msgid "Pause/Continue playback"
 msgstr "Pausa/Continua la riproduzione"
 
-#, fuzzy
 msgid "Pending restart"
-msgstr "Gestione stato"
+msgstr "Riavvio in sospeso"
 
 msgid "Percentage left"
 msgstr "Percentuale a sinistra"
@@ -6470,9 +6444,9 @@ msgstr "Premere MENU sul telecomando per opzioni aggiuntive."
 msgid "Press OK on your remote control to continue."
 msgstr "Premere OK sul telecomando per continuare."
 
-#, fuzzy, python-format
+#, python-format
 msgid "Press OK to activate the selected %s skin."
-msgstr "Premere OK sul telecomando per attivare la skin selezionata."
+msgstr "Premere OK sul telecomando per attivare la skin %s selezionata."
 
 msgid "Press OK to activate the settings."
 msgstr "Premere OK per attivare le impostazioni."
@@ -6484,9 +6458,9 @@ msgstr "Premere OK per modificare le impostazioni."
 msgid "Press OK to get further details for %s"
 msgstr "Premere OK per maggiori dettagli su %s."
 
-#, fuzzy, python-format
+#, python-format
 msgid "Press OK to keep the currently selected %s skin."
-msgstr "Premere OK sul telecomando per attivare la skin selezionata."
+msgstr "Premere OK sul telecomando per attivare la skin %s selezionata."
 
 msgid "Press OK to scan"
 msgstr "Premere OK per avviare la ricerca"
@@ -6503,7 +6477,6 @@ msgstr "Premere OK per selezionare un servizio."
 msgid "Press OK to select satellites"
 msgstr "Premere OK per selezionare i satelliti"
 
-#, fuzzy
 msgid "Press OK to select the save location of the log file."
 msgstr "Selezionare la cartella dei file di registro"
 
@@ -6619,7 +6592,6 @@ msgstr "Porto Rico"
 msgid "Purge deleted user bouquets"
 msgstr "Rimozione dei bouquets eliminati"
 
-#, fuzzy
 msgid "Put A/V receiver to standby too."
 msgstr "Mettere il ricevitore in sospensione"
 
@@ -6681,7 +6653,6 @@ msgstr "Eliminare i timer conclusi?"
 msgid "Really exit the subservices quickzap?"
 msgstr "Uscire dal cambio veloce dei sottocanali?"
 
-#, fuzzy
 msgid "Really perform a manufacturer reset now?"
 msgstr "Proteggere la schermata di ripristino di fabbrica"
 
@@ -7007,13 +6978,11 @@ msgstr "Ripristinare"
 msgid "Restore backups"
 msgstr "Ripristino dei backup"
 
-#, fuzzy
 msgid "Restore defaults"
 msgstr "Ripristinare i valori"
 
-#, fuzzy
 msgid "Restore deleted images"
-msgstr "Ripristinare i bouquet eliminati"
+msgstr "Ripristinare le immagini eliminate"
 
 msgid "Restore deleted user bouquets"
 msgstr "Ripristinare i bouquet eliminati"
@@ -7232,7 +7201,6 @@ msgstr "Salvare"
 
 msgid "Save / Enter text and exit"
 msgstr "Inserire / Salvare e uscire"
-
 
 msgid "Save and activate the currently selected skin"
 msgstr "Premere OK sul telecomando per attivare la skin selezionata."
@@ -7554,7 +7522,7 @@ msgid "Select how the satellite dish is set up. i.e. fixed dish, single LNB, DiS
 msgstr "Selezionare come è fatto l'impianto satellitare, ad es. parabola fissa, LNB singolo, switch DiSEqC, motore, ecc."
 
 msgid "Select how you want your receiver to keep the correct time, either from the DVB transponder, or from the internet using NTP. Or use Auto, which will favour using NTP, but will fall back to transponder time when no internet connection is available."
-msgstr ""
+msgstr "Selezionare il modo in cui si desidera che il ricevitore mantenga l'ora corretta, dal transponder DVB o da Internet utilizzando NTP. Oppure usa Auto, che favorirà l'uso di NTP, ma ricorrerà all'ora del transponder quando non è disponibile una connessione Internet."
 
 msgid "Select input device"
 msgstr "Selezionare la periferica di ingresso"
@@ -7641,17 +7609,14 @@ msgstr "Selezionare il satellite che si desidera configurare. Dopo aver impostat
 msgid "Select the satellite your dish receives from. If you are unsure select 'automatic' and the receiver will attempt to determine this for you."
 msgstr "Selezionare il satellite dal quale la parabola riceve il segnale. Nel dubbio selezionare \"Automatico\" e il ricevitore tenterà di individuarlo da solo."
 
-#, fuzzy
 msgid "Select the shifted character set"
-msgstr "Selezionare il set di caratteri spostati dalla tastiera virtuale"
+msgstr "Selezionare il set di caratteri spostato"
 
-#, fuzzy
 msgid "Select the shifted character set for the next character only"
-msgstr "Selezionare il set di caratteri con spostamento della tastiera virtuale solo per il carattere successivo"
+msgstr "Selezionare il set di caratteri spostato solo per il carattere successivo"
 
-#, fuzzy
 msgid "Select the time zone within the area or region."
-msgstr "Selezionare la risoluzione orizzontale:"
+msgstr "Selezionare il fuso orario all'interno dell'area o dell'area geografica."
 
 msgid "Select the tuner that controls the motorised dish."
 msgstr "Selezionare il sintonizzatore che controlla la parabola motorizzata."
@@ -7708,9 +7673,8 @@ msgstr "Selezionare il provider e premere OK per avviare la ricerca"
 msgid "Select your region. If not available change 'Country' to 'all' and select one of the default alternatives."
 msgstr "Selezionare la regione. Se non è presente modificare il \"Paese\" in \"Tutti\" e selezionare una delle alternative predefinite."
 
-#, fuzzy
 msgid "Select your time zone area or region."
-msgstr "Selezionare la risoluzione orizzontale:"
+msgstr "Seleziona l'area o l'area geografica del fuso orario."
 
 msgid "Selecting satellites 1 (USALS)"
 msgstr "Selezionare i satelliti 1 (USALS)"
@@ -8138,9 +8102,8 @@ msgstr "Mostrare le icone di registrazione a forma di orologio"
 msgid "Show record indicator"
 msgstr "Mostrare l'indicatore di registrazione"
 
-#, fuzzy
 msgid "Show satellites list"
-msgstr "Mostrare la lista canali"
+msgstr "Mostrare la lista satelliti"
 
 #, fuzzy
 msgid "Show screen path"
@@ -8176,9 +8139,8 @@ msgstr "Mostrare gli indicatori di stato nell'elenco dei video"
 msgid "Show status icons in movielist"
 msgstr "Mostrare gli indicatori di stato nell'elenco dei video"
 
-#, fuzzy
 msgid "Show sub-menu"
-msgstr "Mostrare la lista di selezione dei canali in colonne a larghezza fissa"
+msgstr "Mostrare sottomenu"
 
 msgid "Show subservice selection"
 msgstr "Mostrare la selezione del sottocanale"
@@ -8279,9 +8241,8 @@ msgstr "Singolo"
 msgid "Single EPG"
 msgstr "EPG singolo"
 
-#, fuzzy
 msgid "Single line mode"
-msgstr "Selezionare la modalità video"
+msgstr "Modalità linea singola"
 
 msgid "Single satellite"
 msgstr "Satellite singolo"
@@ -8302,9 +8263,8 @@ msgstr "Longitudine locale"
 msgid "Skin & Resolution: %s (%sx%s)\n"
 msgstr "Skin e Risolutione: %s (%sx%s)\n"
 
-#, fuzzy
 msgid "Skin Selection Actions"
-msgstr "Selezionare un'attività"
+msgstr "Selezione azioni dell'interfaccia"
 
 msgid "SkinSelector: Restart GUI"
 msgstr ""
@@ -8407,7 +8367,7 @@ msgid "Somalia"
 msgstr "Somalia"
 
 msgid "Some TVs do not wake from standby when they receive the 'Image View On' command. If this is the case try the 'Text View On' command instead."
-msgstr ""
+msgstr "Alcuni televisori non si riattivano dalla modalità standby quando ricevono il comando \"Image View On\". In questo caso, prova invece il comando \"Visualizzazione testo attivata\"."
 
 msgid "Some plugins are not available:\n"
 msgstr "Alcuni plugin non sono disponibili:\n"
@@ -8664,9 +8624,8 @@ msgstr "Interrompere il flusso attuale"
 msgid "Stop entry"
 msgstr "Interrompere la voce"
 
-#, fuzzy
 msgid "Stop live TV service"
-msgstr "Andare all'ultimo canale"
+msgstr "Interrompi il servizio TV in diretta"
 
 msgid "Stop play TV"
 msgstr "Interrompere la visione della TV"
@@ -8782,9 +8741,8 @@ msgstr "Selezione dei sottotitoli..."
 msgid "Subtitle settings"
 msgstr "Sottotitoli"
 
-#, fuzzy
 msgid "Subtitle show/hide..."
-msgstr "Selezione dei sottotitoli..."
+msgstr "Sottotitoli mostra/nascondi"
 
 msgid "Subtitles"
 msgstr "Sottotitoli"
@@ -8792,13 +8750,11 @@ msgstr "Sottotitoli"
 msgid "Subtitles Settings"
 msgstr "Impostazioni dei sottotitoli"
 
-#, fuzzy
 msgid "Subtitles disabled"
-msgstr "Impostazioni dei sottotitoli"
+msgstr "Sottotitoli disabilitati"
 
-#, fuzzy
 msgid "Subtitles enabled"
-msgstr "Limiti abilitati"
+msgstr "Sottotitoli abilitati"
 
 msgid "Succeeded:"
 msgstr "Riuscito:"
@@ -8816,6 +8772,8 @@ msgid ""
 "Sundtek - hardware blind scan in progress.\n"
 "Please wait(3-20 min) for the scan to finish."
 msgstr ""
+"Sundtek - scansione cieca dell'hardware in corso.\n"
+"Attendere (3-20 minuti) per il completamento della scansione."
 
 msgid "Suriname"
 msgstr "Suriname"
@@ -8859,17 +8817,14 @@ msgstr "Passare al canale precedente"
 msgid "Switch channel up"
 msgstr "Passare al canale successivo"
 
-#, fuzzy
 msgid "Switch on the display during Standby Mode"
-msgstr "Mostrare l'elenco delle estensioni disponibili per lo schermo e l'interfaccia utente."
+msgstr "Accendere il display durante la modalità Standby"
 
-#, fuzzy
 msgid "Switch on the display during Suspend Mode"
-msgstr "Mostrare l'elenco delle estensioni disponibili per lo schermo e l'interfaccia utente."
+msgstr "Accendere il display durante la modalità Suspend"
 
-#, fuzzy
 msgid "Switch on the display during operation."
-msgstr "Mostrare l'elenco delle estensioni disponibili per lo schermo e l'interfaccia utente."
+msgstr "Accendere il display durante il funzionamento."
 
 msgid "Switch to TV mode"
 msgstr "Passare alla modalità TV"
@@ -9321,9 +9276,8 @@ msgstr "Questa opzione consente di visualizzare tutti i simboli sul display."
 msgid "This option allows you to show menu and/or plugin number quick links."
 msgstr "Questa opzione consente di mostrare collegamenti rapidi al numero di menu e plug-in."
 
-#, fuzzy
 msgid "This option allows you to show the full screen path leading to the current screen."
-msgstr "Questa opzione consente di intensificare il colore verde nell'immagine."
+msgstr "Questa opzione consente di visualizzare il percorso a schermo intero che porta alla schermata corrente."
 
 msgid "This option allows you to view the old and new settings side by side."
 msgstr "Questa opzione consente di confrontare fianco a fianco le impostazioni vecchie e nuove."
@@ -9466,7 +9420,7 @@ msgid "Time scale"
 msgstr "Scala del tempo"
 
 msgid "Time synchronization method"
-msgstr ""
+msgstr "Metodo di sincronizzazione dell'ora"
 
 #, fuzzy
 msgid "Time zone"
@@ -9594,16 +9548,14 @@ msgstr ""
 msgid "Toggle show/hide"
 msgstr "Attivare/disattivare mostrare/nascondere"
 
-#, fuzzy
 msgid "Toggle subtitles show/hide"
-msgstr "Attivare/disattivare mostrare/nascondere"
+msgstr "Attiva/disattiva i sottotitoli mostra/nascondi"
 
 msgid "Toggle the tv and the radio player..."
 msgstr "Attivare/disattivare il lettore TV e radio..."
 
-#, fuzzy
 msgid "Toggle videomode"
-msgstr "Selezionare la modalità video"
+msgstr "Attiva/disattiva la modalità video"
 
 msgid "Togo"
 msgstr "Togo"
@@ -9654,9 +9606,8 @@ msgstr "Modalità di trasmissione"
 msgid "Transponder"
 msgstr "Transponder"
 
-#, fuzzy
 msgid "Transponder Time"
-msgstr "Transponder"
+msgstr "Tempo transponder"
 
 msgid "Transport Stream Type"
 msgstr "Tipo di flusso da trasmettere"
@@ -9770,13 +9721,11 @@ msgstr "Tuvalu"
 msgid "Two"
 msgstr "Due"
 
-#, fuzzy
 msgid "Two lines"
-msgstr "Mostrare la riga di informazioni"
+msgstr "Due linee"
 
-#, fuzzy
 msgid "Two lines and next event"
-msgstr "Andare all'evento successivo"
+msgstr "Due linee e prossimo evento"
 
 msgid "Type"
 msgstr "Tipo"
@@ -9946,9 +9895,9 @@ msgstr "Aggiornamento del catalogo software in corso..."
 msgid "Upper case"
 msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "Uptime: %s\n"
-msgstr "Timer di spegnimento"
+msgstr "Tempo di attività: %s\n"
 
 msgid "Uruguay"
 msgstr "Uruguay"
@@ -10303,7 +10252,7 @@ msgid "Wake On LAN"
 msgstr "Riattivazione via rete"
 
 msgid "Wake the receiver from standby when selected wake command is sent from the TV."
-msgstr ""
+msgstr "Riattivare il ricevitore dalla modalità standby quando il comando di riattivazione selezionato viene inviato dal televisore."
 
 msgid "Wakeup"
 msgstr "Riattivare"
@@ -10437,13 +10386,11 @@ msgstr "Se questa impostazione è attivata, i tasti freccia intorno al tasto OK 
 msgid "When enabled the left, right, CH+/-, B+/-, P+/- buttons will follow the 'neutrino' style zap controls instead of the enigma2 style."
 msgstr "Se questa impostazione è attivata, i tasti freccia sinistra, freccia destra, CH+/-, B+/-, P+/- utilizzeranno lo stile 'Neutrino' per il cambio dei canali invece dello stile Enigma2."
 
-#, fuzzy
 msgid "When enabled the receiver will automatically return to standby when the TV is turned off."
-msgstr "Se questa impostazione è attivata, il ricevitore utilizzerà automaticamente l'ultima traccia audio precedentemente selezionata per quel determinato canale."
+msgstr "Se abilitato, il ricevitore tornerà automaticamente in standby quando il televisore viene spento."
 
-#, fuzzy
 msgid "When enabled the receiver will automatically wake from standby when the TV is turned on."
-msgstr "Se questa impostazione è attivata, il ricevitore utilizzerà automaticamente l'ultima traccia audio precedentemente selezionata per quel determinato canale."
+msgstr "Se abilitato, il ricevitore si riattiverà automaticamente dalla modalità standby all'accensione del televisore."
 
 msgid "When enabled the set top box is able to wakeup on LAN"
 msgstr "Se questa impostazione è attivata, il ricevitore sarà in grado di riattivarsi via rete."
@@ -10636,7 +10583,7 @@ msgid "When nonzero, a recording will stop later than the ending time indicated 
 msgstr "Un valore diverso da zero (in minuti) farà concludere una registrazione posticipandola rispetto all'orario di fine previsto dall'EPG."
 
 msgid "When receiver wakes from standby, it will command the TV to switch to the HDMI input the receiver is connected to."
-msgstr ""
+msgstr "Quando il ricevitore si riattiva dalla modalità standby, comanderà al televisore di passare all'ingresso HDMI a cui è collegato il ricevitore."
 
 msgid "When selected this allows video modes to be selected even if they are not reported as supported."
 msgstr "Se selezionato, consente di selezionare le modalità video anche se non vengono segnalate come supportate."
