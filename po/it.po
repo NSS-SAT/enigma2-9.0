@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: OpenPLi-enigma2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 11:54+0200\n"
-"PO-Revision-Date: 2024-05-16 21:05+0200\n"
+"PO-Revision-Date: 2024-05-19 12:47+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Previous-Translator: ngc1927 <ngc1927@gmail.com> 2016-06-12\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid ""
@@ -63,9 +63,8 @@ msgstr ""
 "\n"
 "Timer '%s' disabilitato!"
 
-#, fuzzy
 msgid " (+5 volt terrestrial)"
-msgstr "Terrestre"
+msgstr " (+5 volt terrestrial)"
 
 msgid " (0 - all networks)"
 msgstr " (0 - tutte le reti)"
@@ -87,9 +86,8 @@ msgstr " (Radio)"
 msgid " (TV)"
 msgstr " (TV)"
 
-#, fuzzy
 msgid " (auto detection)"
-msgstr "Selezione dell'audio"
+msgstr " (auto detection)"
 
 msgid " (disabled)"
 msgstr " (disabilitato)"
@@ -104,7 +102,7 @@ msgid " (lower than any auto)"
 msgstr " (secondario rispetto a qualsiasi automatico)"
 
 msgid " - Unicable/JESS LNBs not found"
-msgstr ""
+msgstr " - LNB Unicable/JESS non trovati"
 
 msgid " Warning: the selected tuner should not use SCR Unicable type for LNBs because each tuner need a own SCR number."
 msgstr "Attenzione: il sintonizzatore selezionato non deve utilizzare il tipo Unicable SCR per gli LNB perché ogni sintonizzatore necessita di un proprio numero SCR"
@@ -126,6 +124,12 @@ msgstr "Ingresso LNB unicable del rotore"
 
 msgid " updates available."
 msgstr " aggiornamenti disponibili."
+
+msgid "Choice CrashLog folder"
+msgstr "Scegli Cartella CrashLog"
+
+msgid "This option allows you to configure the path of the log crash debug."
+msgstr "Questa opzione consente di configurare il percorso del debug dell'arresto anomalo del log."
 
 #, python-format
 msgid "%.0f GB"
@@ -268,7 +272,7 @@ msgstr "%d kB/s"
 msgid "%d min"
 msgstr "%d min"
 
-#, fuzzy, python-format
+#, python-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuto"
@@ -554,9 +558,8 @@ msgstr "4:3 Letterbox"
 msgid "4:3 PanScan"
 msgstr "4:3 Pan & Scan"
 
-#, fuzzy
 msgid "4K"
-msgstr "4"
+msgstr "4K"
 
 msgid "5"
 msgstr "5"
@@ -573,9 +576,8 @@ msgstr "7"
 msgid "8"
 msgstr "8"
 
-#, fuzzy
 msgid "8K"
-msgstr "8"
+msgstr "8K"
 
 msgid "8bit"
 msgstr "8bit"
@@ -624,7 +626,7 @@ msgstr ""
 "Mantenere le modifiche?"
 
 msgid "A file from media is in use!"
-msgstr ""
+msgstr "È in uso un file da un supporto!"
 
 msgid ""
 "A finished record timer wants to set your\n"
@@ -978,9 +980,8 @@ msgstr "Abilitare i sottotitoli per non udenti"
 msgid "Allow unsupported modes"
 msgstr "Consenti modalità non supportate"
 
-#, fuzzy
 msgid "Allows the TV remote to be used to control the receiver."
-msgstr "Utilizzare il telecomando TV"
+msgstr "Consente di utilizzare il telecomando del televisore per controllare il ricevitore."
 
 msgid "Alpha"
 msgstr "Trasparenza"
@@ -1063,9 +1064,8 @@ msgstr "Tutte le attività"
 msgid "Arabic"
 msgstr "Arabo"
 
-#, fuzzy
 msgid "Are you sure to delete image:"
-msgstr "Sei sicuro di riavviare"
+msgstr "Sei sicuro di rimuovere l'immagine:"
 
 msgid "Are you sure to purge all deleted user bouquets?"
 msgstr "Si desidera eliminare tutti i bouquet?"
@@ -1086,9 +1086,8 @@ msgstr "Si desidera eliminare tutti i canali terrestri?"
 msgid "Are you sure to remove this entry?"
 msgstr "Si desidera eliminare questa voce?"
 
-#, fuzzy
 msgid "Are you sure to restore all deleted images"
-msgstr "Si desidera eliminare tutti i canali via cavo?"
+msgstr "Sei sicuro di ripristinare tutte le immagini cancellate"
 
 msgid ""
 "Are you sure you want to activate this network configuration?\n"
@@ -1296,7 +1295,7 @@ msgid "Automatic scan"
 msgstr "Ricerca automatica"
 
 msgid "Automatically put the TV in standby whenever the receiver goes into standby or deep standby."
-msgstr ""
+msgstr "Mettere automaticamente il televisore in standby ogni volta che il ricevitore entra in standby o deep standby."
 
 msgid "Automatically start timeshift after"
 msgstr "Avviare timeshift automaticamente dopo"
@@ -1642,9 +1641,8 @@ msgstr "Annulla qualsiasi modifica alla skin attualmente attiva e esci da tutti 
 msgid "Cancel any text changes and exit"
 msgstr "Annulla eventuali modifiche al testo ed esci"
 
-#, fuzzy
 msgid "Cancel execution?"
-msgstr "Selezione canale"
+msgstr "Annullare l'esecuzione?"
 
 msgid "Cancelled upon user request"
 msgstr "Annullato su richiesta dell'utente"
@@ -1891,9 +1889,8 @@ msgstr "Impostazioni raccolta"
 msgid "Colombia"
 msgstr "Colombia"
 
-#, fuzzy
 msgid "Color"
-msgstr "Colombia"
+msgstr "Colore"
 
 msgid "Color format"
 msgstr "Formato colore"
@@ -4419,9 +4416,8 @@ msgstr "Ignorare la sottorete dello spazio dei nomi DVB-T"
 msgid "Ignore conflict"
 msgstr "Ignorare il conflitto"
 
-#, fuzzy
 msgid "Image View On"
-msgstr "Immagine: "
+msgstr "Visualizzazione dell'immagine attivata"
 
 #, python-format
 msgid ""
@@ -7563,16 +7559,16 @@ msgid "Select target folder"
 msgstr "Selezionare la cartella di destinazione"
 
 msgid "Select the User Band channel to be assigned to this tuner. This is an index into the table of frequencies the SCR switch or SCR LNB uses to pass the requested transponder to the tuner."
-msgstr ""
+msgstr "Selezionare il canale User Band da assegnare a questo sintonizzatore. Si tratta di un indice nella tabella delle frequenze utilizzate dall'interruttore SCR o dall'LNB SCR per passare il transponder richiesto al sintonizzatore."
 
 msgid "Select the User Band frequency to be assigned to this tuner. This is the frequency the SCR switch or SCR LNB uses to pass the requested transponder to the tuner."
-msgstr ""
+msgstr "Selezionare la frequenza della banda utente da assegnare a questo sintonizzatore. Questa è la frequenza utilizzata dall'interruttore SCR o dall'LNB SCR per passare il transponder richiesto al sintonizzatore."
 
 msgid "Select the User Band to be assigned to this tuner. This is an index into the table of frequencies the SCR switch or SCR LNB uses to pass the requested transponder to the tuner."
-msgstr ""
+msgstr "Selezionare la User Band da assegnare a questo sintonizzatore. Si tratta di un indice nella tabella delle frequenze utilizzate dall'interruttore SCR o dall'LNB SCR per passare il transponder richiesto al sintonizzatore."
 
 msgid "Select the character or action under the keyboard cursor"
-msgstr ""
+msgstr "Seleziona il carattere o l'azione sotto il cursore della tastiera"
 
 #, fuzzy
 msgid "Select the locale from a menu"
@@ -8153,7 +8149,7 @@ msgid "Show the radio player..."
 msgstr "Mostrare il lettore radio..."
 
 msgid "Show the service information on two lines in the channel selection screen. You can choose between the current event description below the channel name, or the current event description next to the channel name, and the next event description on the second line."
-msgstr ""
+msgstr "Mostra le informazioni sul servizio su due righe nella schermata di selezione del canale. Puoi scegliere tra la descrizione dell'evento corrente sotto il nome del canale o la descrizione dell'evento corrente accanto al nome del canale e la descrizione dell'evento successivo nella seconda riga."
 
 msgid "Show the tv player..."
 msgstr "Mostrare il lettore TV..."
@@ -8972,7 +8968,7 @@ msgid "Testscreens that are helpfull to fine-tune your display"
 msgstr "Schermate di prova utili per la regolazione di precisione del display"
 
 msgid "Text View On"
-msgstr ""
+msgstr "Visualizzazione testo attivata"
 
 msgid "Text color"
 msgstr "Colore del testo"
@@ -9014,7 +9010,7 @@ msgid "The PIN codes you entered are different."
 msgstr "I codici PIN inseriti sono differenti."
 
 msgid "The command to wake from standby will be sent multiple times."
-msgstr ""
+msgstr "Il comando di riattivazione dallo standby verrà inviato più volte."
 
 #, python-format
 msgid ""
@@ -9036,7 +9032,7 @@ msgid "The following files were found..."
 msgstr "Trovati i seguenti file..."
 
 msgid "The hostname or the IP address of the NTP server to synchronise the time with."
-msgstr ""
+msgstr "Il nome host o l'indirizzo IP del server NTP con cui sincronizzare l'ora."
 
 msgid ""
 "The network wizard extension is not installed!\n"
@@ -9175,7 +9171,7 @@ msgid "This DVD RW medium is already formatted - reformatting will erase all con
 msgstr "Il DVD-RW è già formattato - una nuova formattazione cancellerà tutto il contenuto del disco."
 
 msgid "This can be useful when using the CI(+) module. After the end of the recording, the service will be automatically stopped."
-msgstr ""
+msgstr "Ciò può essere utile quando si utilizza il modulo CI(+). Al termine della registrazione, il servizio verrà automaticamente interrotto."
 
 #, python-format
 msgid "This field allows you to search an additional symbol rate up to %s."
@@ -9504,14 +9500,14 @@ msgstr "Modalità di titolazione"
 
 #, python-format
 msgid "To apply the selected '%s' skin the GUI needs to restart. Would you like to restart the GUI now?"
-msgstr ""
+msgstr "Per applicare lo skin '%s' selezionato, la GUI deve essere riavviata. Vuoi riavviare la GUI ora?"
 
 msgid "To audio selection"
 msgstr "Selezione dell'audio"
 
 #, python-format
 msgid "To save and apply the selected '%s' skin the GUI needs to restart. Would you like to save the selection and restart the GUI now?"
-msgstr ""
+msgstr "Per salvare e applicare lo skin '%s' selezionato, è necessario riavviare la GUI. Vuoi salvare la selezione e riavviare la GUI ora?"
 
 msgid "To subtitle selection"
 msgstr "Selezione dei sottotitoli"
@@ -9541,7 +9537,7 @@ msgid "Toggle infoBar"
 msgstr "Attivare/disattivare l'infobar"
 
 msgid "Toggle new text inserts before or overwrites existing text"
-msgstr ""
+msgstr "Attiva/disattiva i nuovi inserimenti di testo prima o sovrascrive il testo esistente"
 
 msgid "Toggle show/hide"
 msgstr "Attivare/disattivare mostrare/nascondere"
@@ -9795,7 +9791,7 @@ msgid "Unencrypted"
 msgstr "In chiaro"
 
 msgid "Unexpected error while retreiving fallback tuner's timer information"
-msgstr ""
+msgstr "Errore imprevisto durante il recupero delle informazioni sul timer del tuner di fallback"
 
 msgid "UnhandledKey"
 msgstr "Tasto non gestito"
@@ -9891,7 +9887,7 @@ msgid "Updating software catalog"
 msgstr "Aggiornamento del catalogo software in corso..."
 
 msgid "Upper case"
-msgstr ""
+msgstr "Maiuscolo"
 
 #, python-format
 msgid "Uptime: %s\n"
@@ -10255,7 +10251,6 @@ msgstr "Riattivare il ricevitore dalla modalità standby quando il comando di ri
 msgid "Wakeup"
 msgstr "Riattivare"
 
-#, fuzzy
 msgid "Wakeup A/V receiver from standby too."
 msgstr "Riattivare il ricevitore dalla sospensione"
 
@@ -10299,7 +10294,7 @@ msgid "Warning: no LNB; using factory defaults."
 msgstr "Attenzione: nessun LNB; utilizzati i valori predefiniti di fabbrica."
 
 msgid "Warning: the second input of this dual tuner may not support SCR LNBs. "
-msgstr ""
+msgstr "Attenzione: il secondo ingresso di questo doppio sintonizzatore potrebbe non supportare le LNB SCR."
 
 msgid "Watch movies..."
 msgstr "Riprodurre i video..."
@@ -10494,9 +10489,8 @@ msgstr "Se questa impostazione è attivata, i flussi http saranno decodificati s
 msgid "When enabled, it is possible to leave the movieplayer with exit."
 msgstr "Se questa impostazione è attivata, sarà possibile uscire dal lettore video con il tasto EXIT."
 
-#, fuzzy
 msgid "When enabled, it will automatically play to the last saved radio service when switching to radio mode."
-msgstr "Se questa impostazione è attivata, il ricevitore utilizzerà automaticamente l'ultima traccia audio precedentemente selezionata per quel determinato canale."
+msgstr "Se abilitato, verrà riprodotto automaticamente sull'ultimo servizio radio salvato quando si passa alla modalità radio."
 
 msgid "When enabled, measure power consumption to detect when the rotor stops turning (when supported by the tuner)."
 msgstr "Se questa impostazione è attivata, verrà misurato l'assorbimento di corrente per determinare quando il motore si è fermato (se supportato dal sintonizzatore)."
@@ -10624,20 +10618,17 @@ msgstr "Con gli errori:"
 msgid "With popup"
 msgstr "Con un popup"
 
-#, fuzzy
 msgid "With this option you can switch on the display during operation."
-msgstr "Questa opzione consente di spegnere il display."
+msgstr "Con questa opzione è possibile accendere il display durante il funzionamento."
 
-#, fuzzy
 msgid "With this option you can switch on the display in Deep Standby Mode."
-msgstr "Questa opzione consente di spegnere il display."
+msgstr "Con questa opzione è possibile accendere il display in modalità Deep Standby."
 
-#, fuzzy
 msgid "With this option you can switch on the display in Standby Mode."
-msgstr "Questa opzione consente di spegnere il display."
+msgstr "Con questa opzione è possibile accendere il display in modalità Standby."
 
 msgid "With this option you can switch the LED color or deactivate the LED."
-msgstr ""
+msgstr "Con questa opzione è possibile cambiare il colore del LED o disattivare il LED."
 
 msgid "Without popup"
 msgstr "Senza un popup"
@@ -10827,7 +10818,7 @@ msgid "You must switch to the service %s (%s - '%s')!\n"
 msgstr "E' necessario selezionare il canale %s (%s - '%s')!\n"
 
 msgid "You seem to be in timeshift!"
-msgstr ""
+msgstr "Sembra che tu sia in timeshift!"
 
 msgid "Your collection exceeds the size of a single layer medium, you will need a blank dual layer DVD!"
 msgstr "La collezione supera la capacità di un disco a singolo strato. Sarà necessario utilizzare un DVD vuoto a doppio strato!"
@@ -11037,9 +11028,8 @@ msgstr "dopo "
 msgid "all"
 msgstr "Tutte"
 
-#, fuzzy
 msgid "all tuners"
-msgstr "Impostazioni tuner del ricevitore remoto di fallback"
+msgstr "tutti i tuner"
 
 msgid "alphabetic"
 msgstr "Alfabetico"
