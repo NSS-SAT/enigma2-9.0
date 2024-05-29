@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: OpenPLi-enigma2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-15 11:54+0200\n"
-"PO-Revision-Date: 2024-05-21 13:01+0200\n"
+"PO-Revision-Date: 2024-05-29 20:17+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Previous-Translator: ngc1927 <ngc1927@gmail.com> 2016-06-12\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.4.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid ""
@@ -2756,7 +2756,6 @@ msgstr "Impostazioni predefinite"
 msgid "Default timer type"
 msgstr "Tipo di timer predefinito"
 
-#, fuzzy
 msgid "Default+Picon"
 msgstr "<Skin Default>"
 
@@ -3184,7 +3183,7 @@ msgid "Do you want to resume this playback?"
 msgstr "Riprendere la riproduzione?"
 
 msgid "Do you want to select a different skin?"
-msgstr "Selezionare un'altra skin?"
+msgstr "Selezionare un'altra skin"
 
 msgid "Do you want to update the package:\n"
 msgstr "Aggiornare il pacchetto:\n"
@@ -5561,11 +5560,9 @@ msgstr "Spostare alla posizione X"
 msgid "Move to the next page"
 msgstr "Passare alla pagina successiva"
 
-#, fuzzy
 msgid "Move to the next skin"
 msgstr "Andare alla voce successiva"
 
-#, fuzzy
 msgid "Move to the previous page"
 msgstr "Ritornare al capitolo precedente"
 
