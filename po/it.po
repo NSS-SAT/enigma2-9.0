@@ -7615,6 +7615,9 @@ msgstr "Mostrare i pacchetti da aggiornare"
 msgid "Show picons in channel selection list"
 msgstr "Mostrare i Picon nella lista canali"
 
+msgid "Choice picons folder"
+msgstr "Scegli percorso picons"
+
 msgid "Show picons in display"
 msgstr "Mostrare i Picon sul display"
 
