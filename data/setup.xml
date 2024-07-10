@@ -6,17 +6,20 @@
     <setup key="avsetup">
         <!-- this is just a placeholder, the Videomode plugin implements this submenu -->
     </setup>
-    <setup key="DNS" title="DNS Settings">
-        <item level="0" text="DNS data source" description="Select the source of the default DNS settings.">config.usage.dns</item>
-    </setup>
+    
+
+	<setup key="DNS" title="DNS Settings">
+		<item level="0" text="DNS data source" description="Select the source of the default DNS settings.">config.usage.dns</item>
+	</setup>
+
     <setup key="usage" title="Customize">
         <item level="1" text="Sort order for menu entries" description="This option allows you to hide and sort menu entries. When selecting user you can change order and hide menu items via the blue button. With the user defined hidden the blue button is not shown in the menus">config.usage.menu_sort_mode</item>
         <item level="1" text="Sort order for setup entries" description="This option allows you to alphabetically sort setup menu entries.">config.usage.sort_settings</item>
         <item level="1" text="Show screen path" description="This option allows you to show the full screen path leading to the current screen.">config.usage.showScreenPath</item>
         <!-- add @lululla -->
         <item level="0" text="Plugin Browser Style (Need Restart GUI)" description="This option allows you to select the plugin browser style (Need Restart GUI).">config.misc.pluginstyle</item>
-        <item level="0" text="Choice picons folder" description="This option allows you to configure the path of the picons that will be displayed in the channel selection list. But also where they will be downloaded from the download.">config.usage.picon_dir</item>
-        <item level="0" text="Choice CrashLog folder" description="This option allows you to configure the path of the log crash debug.">config.usage.debug_path</item>
+        <item level="0" text="Choice picons folder" description="This option allows you to configure the path of the picons that will be displayed in the channel selection list. But also where they will be downloaded from the download.">config.usage.picon_dir</item>        
+        <item level="0" text="Choice CrashLog folder" description="This option allows you to configure the path of the log crash debug.">config.usage.debug_path</item>        
         <!-- add end @lululla -->
         <item level="0" text="Show menu or plugin numbers" description="This option allows you to show menu and/or plugin number quick links.">config.usage.menu_show_numbers</item>
         <item level="2" text="Show softcam setup in extensions menu" description="This option allows you to add the softcam setup in the extensions menu." requires="HasSoftcamInstalled">config.misc.softcam_setup.extension_menu</item>
@@ -57,8 +60,8 @@
     <setup key="userinterface" title="User interface">
         <item level="2" text="Show picons in display" description="Configure if service picons will be shown in display (when supported by the skin)." requires="HasFrontDisplayPicon">config.usage.show_picon_in_display</item>
         <!-- add @lululla -->
-        <item level="0" text="Choice picons folder" description="This option allows you to configure the path of the picons that will be displayed in the channel selection list. But also where they will be downloaded from the download.">config.usage.picon_dir</item>
-        <item level="0" text="Choice CrashLog folder" description="This option allows you to configure the path of the log crash debug.">config.usage.debug_path</item>
+        <item level="0" text="Choice picons folder" description="This option allows you to configure the path of the picons that will be displayed in the channel selection list. But also where they will be downloaded from the download.">config.usage.picon_dir</item>        
+        <item level="0" text="Choice CrashLog folder" description="This option allows you to configure the path of the log crash debug.">config.usage.debug_path</item>        
         <!-- add end @lululla -->
         <item level="1" text="Show animation while busy" description="Show busy indicator when the system is busy.">config.usage.show_spinner</item>
         <item level="1" text="Show positioner movement" requires="isRotorTuner" description="Configure whether or not an icon should be shown when your motorized dish is moving.">config.usage.showdish</item>
@@ -126,8 +129,7 @@
         <item level="0" text="Select Softcam" description="Select a Softcam from the available list.">config.misc.softcams</item>
         <item level="2" text="Show OScam/CCcam in Extension Menu" description="Allows you to show/hide OScam/CCcam in the Extension Menu screen (BLUE button).">config.softcam.showInExtensions</item>
     </setup>
-    <!--
-     <setup key="SoftwareManager" title="Software Manager Settings" showOpenWebif="1">
+<!--     <setup key="SoftwareManager" title="Software Manager Settings" showOpenWebif="1">
         <if conditional="BoxInfo.getItem('model').startswith('et')">
             <item level="2" text="Select Software Update" description="Select how your box will upgrade.">config.plugins.softwaremanager.updatetype</item>
         </if>
@@ -139,8 +141,7 @@
         <item level="2" text="Overwrite Bootlogo Files ?" description="Overwrite bootlogo files during software upgrade?">config.plugins.softwaremanager.overwriteBootlogoFiles</item>
         <item level="2" text="Overwrite Spinner Files ?" description="Overwrite spinner files during software upgrade?">config.plugins.softwaremanager.overwriteSpinnerFiles</item>
         <item level="2" text="Mode for autorestore" description="Turbo: One reboot after flash\nFast: One reboot after flash, one reboot after restore\nSlow: One reboot after flash, one reboot after restore in GUI">config.plugins.softwaremanager.restoremode</item>
-    </setup>
-        -->
+    </setup> -->
     <setup key="OSCamInfoSetup" title="OSCam Information Settings">
         <item level="0" text="Read Userdata from oscam.conf" description="Read Userdata from oscam.conf">config.oscaminfo.userDataFromConf</item>
         <if conditional="not config.oscaminfo.userDataFromConf.value">
