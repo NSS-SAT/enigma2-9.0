@@ -8,7 +8,7 @@ from Components.NimManager import nimmanager
 from Components.About import about
 from Components.ScrollLabel import ScrollLabel
 from Components.Button import Button
-from Components.SystemInfo import BoxInfo
+from Components.SystemInfo import SystemInfo
 
 from Components.Label import Label
 from Components.ProgressBar import ProgressBar
@@ -41,7 +41,13 @@ class About(Screen):
 		# [WanWizard] Removed until we find a reliable way to determine the installation date
 		# AboutText += _("Installed: ") + about.getFlashDateString() + "\n"
 
-		EnigmaVersion = _("Enigma version: ") + about.getEnigmaVersionString()
+		EnigmaVersion = about.getEnigmaVersionString()
+		EnigmaVersion = EnigmaVersion.rsplit("-", EnigmaVersion.count("-") - 2)
+		if len(EnigmaVersion) == 3:
+			EnigmaVersion = EnigmaVersion[0] + " (" + EnigmaVersion[2] + "-" + EnigmaVersion[1] + ")"
+		else:
+			EnigmaVersion = EnigmaVersion[0] + " (" + EnigmaVersion[1] + ")"
+		EnigmaVersion = _("Enigma version: ") + EnigmaVersion
 		self["EnigmaVersion"] = StaticText(EnigmaVersion)
 		AboutText += "\n" + EnigmaVersion + "\n"
 
@@ -118,7 +124,7 @@ class About(Screen):
 		AboutText += hddinfo + "\n\n" + _("Network Info:")
 		for x in about.GetIPsFromNetworkInterfaces():
 			AboutText += "\n" + x[0] + ": " + x[1]
-		if BoxInfo.getItem("HasHDMI-CEC") and config.hdmicec.enabled.value:
+		if SystemInfo["HasHDMI-CEC"] and config.hdmicec.enabled.value:
 			address = config.hdmicec.fixed_physical_address.value if config.hdmicec.fixed_physical_address.value != "0.0.0.0" else _("not set")
 			AboutText += "\n\n" + _("HDMI-CEC address") + ": " + address
 
@@ -137,9 +143,7 @@ class About(Screen):
 				"blue": self.showMemoryInfo,
 				"yellow": self.showTroubleshoot,
 				"up": self["AboutScrollLabel"].pageUp,
-				"down": self["AboutScrollLabel"].pageDown,
-				"left": self["AboutScrollLabel"].pageUp,
-				"right": self["AboutScrollLabel"].pageDown
+				"down": self["AboutScrollLabel"].pageDown
 			})
 
 	def showTranslationInfo(self):
@@ -214,7 +218,7 @@ class CommitInfo(Screen):
 
 		# get the branch to display from the Enigma version
 		try:
-			branch = "?sha=" + about.getEnigmaVersionString().split("(")[1].split(")")[0].lower()
+			branch = "?sha=" + "-".join(about.getEnigmaVersionString().split("-")[3:])
 		except:
 			branch = ""
 		branch_e2plugins = "?sha=python3"
@@ -452,12 +456,7 @@ class Troubleshoot(Screen):
 		self["AboutScrollLabel"].setText("")
 		self.setTitle("%s - %s" % (_("Troubleshoot"), self.titles[self.commandIndex]))
 		command = self.commands[self.commandIndex]
-		if command == "boxinfo":
-			text = ""
-			for item in BoxInfo.getItemsList():
-				text += '%s = %s %s%s' % (item, str(BoxInfo.getItem(item)), type(BoxInfo.getItem(item)), " [immutable]\n" if item in BoxInfo.getEnigmaInfoList() else "\n")
-			self["AboutScrollLabel"].setText(text)
-		elif command.startswith("cat "):
+		if command.startswith("cat "):
 			try:
 				self["AboutScrollLabel"].setText(open(command[4:], "r").read())
 			except:
@@ -484,8 +483,8 @@ class Troubleshoot(Screen):
 		return [x for x in sorted(glob.glob("/mnt/hdd/*.log"), key=lambda x: os.path.isfile(x) and os.path.getmtime(x))] + (os.path.isfile(home_root) and [home_root] or []) + (os.path.isfile(tmp) and [tmp] or [])
 
 	def updateOptions(self):
-		self.titles = ["dmesg", "ifconfig", "df", "top", "ps", "messages", "enigma info", "BoxInfo"]
-		self.commands = ["dmesg", "ifconfig", "df -h", "top -n 1", "ps -l", "cat /var/volatile/log/messages", "cat /usr/lib/enigma.info", "boxinfo"]
+		self.titles = ["dmesg", "ifconfig", "df", "top", "ps", "messages"]
+		self.commands = ["dmesg", "ifconfig", "df -h", "top -n 1", "ps -l", "cat /var/volatile/log/messages"]
 		install_log = "/home/root/autoinstall.log"
 		if os.path.isfile(install_log):
 				self.titles.append("%s" % install_log)
