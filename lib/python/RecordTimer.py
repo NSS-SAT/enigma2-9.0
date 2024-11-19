@@ -3,7 +3,7 @@ from enigma import eEPGCache, getBestPlayableServiceReference, eStreamServer, eS
 
 from Components.config import config
 from Components.UsageConfig import defaultMoviePath
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Components.TimerSanityCheck import TimerSanityCheck
 
 from Screens.MessageBox import MessageBox
@@ -195,27 +195,27 @@ class RecordTimerEntry(timer.TimerEntry):
 		self.external = self.external_prev = False
 		self.setAdvancedPriorityFrontend = None
 		self.background_zap = None
-		if SystemInfo["DVB-T_priority_tuner_available"] or SystemInfo["DVB-C_priority_tuner_available"] or SystemInfo["DVB-S_priority_tuner_available"] or SystemInfo["ATSC_priority_tuner_available"]:
+		if BoxInfo.getItem("DVB-T_priority_tuner_available") or BoxInfo.getItem("DVB-C_priority_tuner_available") or BoxInfo.getItem("DVB-S_priority_tuner_available") or BoxInfo.getItem("ATSC_priority_tuner_available"):
 			rec_ref = self.service_ref and self.service_ref.ref
 			str_service = rec_ref and rec_ref.toString()
 			if str_service and '%3a//' not in str_service and not str_service.rsplit(":", 1)[1].startswith("/"):
 				type_service = rec_ref.getUnsignedData(4) >> 16
 				if type_service == 0xEEEE:
-					if SystemInfo["DVB-T_priority_tuner_available"] and config.usage.recording_frontend_priority_dvbt.value != "-2":
+					if BoxInfo.getItem("DVB-T_priority_tuner_available") and config.usage.recording_frontend_priority_dvbt.value != "-2":
 						if config.usage.recording_frontend_priority_dvbt.value != config.usage.frontend_priority.value:
 							self.setAdvancedPriorityFrontend = config.usage.recording_frontend_priority_dvbt.value
-					if SystemInfo["ATSC_priority_tuner_available"] and config.usage.recording_frontend_priority_atsc.value != "-2":
+					if BoxInfo.getItem("ATSC_priority_tuner_available") and config.usage.recording_frontend_priority_atsc.value != "-2":
 						if config.usage.recording_frontend_priority_atsc.value != config.usage.frontend_priority.value:
 							self.setAdvancedPriorityFrontend = config.usage.recording_frontend_priority_atsc.value
 				elif type_service == 0xFFFF:
-					if SystemInfo["DVB-C_priority_tuner_available"] and config.usage.recording_frontend_priority_dvbc.value != "-2":
+					if BoxInfo.getItem("DVB-C_priority_tuner_available") and config.usage.recording_frontend_priority_dvbc.value != "-2":
 						if config.usage.recording_frontend_priority_dvbc.value != config.usage.frontend_priority.value:
 							self.setAdvancedPriorityFrontend = config.usage.recording_frontend_priority_dvbc.value
-					if SystemInfo["ATSC_priority_tuner_available"] and config.usage.recording_frontend_priority_atsc.value != "-2":
+					if BoxInfo.getItem("ATSC_priority_tuner_available") and config.usage.recording_frontend_priority_atsc.value != "-2":
 						if config.usage.recording_frontend_priority_atsc.value != config.usage.frontend_priority.value:
 							self.setAdvancedPriorityFrontend = config.usage.recording_frontend_priority_atsc.value
 				else:
-					if SystemInfo["DVB-S_priority_tuner_available"] and config.usage.recording_frontend_priority_dvbs.value != "-2":
+					if BoxInfo.getItem("DVB-S_priority_tuner_available") and config.usage.recording_frontend_priority_dvbs.value != "-2":
 						if config.usage.recording_frontend_priority_dvbs.value != config.usage.frontend_priority.value:
 							self.setAdvancedPriorityFrontend = config.usage.recording_frontend_priority_dvbs.value
 		self.needChangePriorityFrontend = self.setAdvancedPriorityFrontend is not None or config.usage.recording_frontend_priority.value != "-2" and config.usage.recording_frontend_priority.value != config.usage.frontend_priority.value
@@ -328,7 +328,8 @@ class RecordTimerEntry(timer.TimerEntry):
 			description = self.description
 			if self.repeated:
 				epgcache = eEPGCache.getInstance()
-				queryTime = self.begin + (self.end - self.begin) // 2
+				#This might need further investigation. Dp npt get exactly the middle, take 20% so we usually expect to get first event.
+				queryTime = self.begin + (self.end - self.begin) // 5
 				evt = epgcache.lookupEventTime(rec_ref, queryTime)
 				if evt:
 					if self.rename_repeat:
@@ -381,7 +382,7 @@ class RecordTimerEntry(timer.TimerEntry):
 		self.log(10, "backoff: retry in %d seconds" % self.backoff)
 
 	def sendactivesource(self):
-		if SystemInfo["HasHDMI-CEC"] and config.hdmicec.enabled.value and config.hdmicec.sourceactive_zaptimers.value:
+		if BoxInfo.getItem("HasHDMI-CEC") and config.hdmicec.enabled.value and config.hdmicec.sourceactive_zaptimers.value:
 			import Components.HdmiCec
 			Components.HdmiCec.hdmi_cec.sendMessage(0, "sourceactive")
 			print("[TIMER] sourceactive was send")
@@ -428,7 +429,11 @@ class RecordTimerEntry(timer.TimerEntry):
 				# i.e. cable / sat.. then the second recording needs an own extension... when we create the file
 				# here than calculateFilename is happy
 				if not self.justplay:
-					open(self.Filename + self.record_service.getFilenameExtension(), "w").close()
+					try:
+						open(self.Filename + self.record_service.getFilenameExtension(), "w").close()
+					except Exception as e:
+						AddNotification(MessageBox, _("Timer recording failed. No space left on device!\n"), type=MessageBox.TYPE_ERROR, timeout=0)
+						print("[TIMER] Error:", e)
 					# Give the Trashcan a chance to clean up
 					try:
 						trashcan_instance.cleanIfIdle(self.Filename)
@@ -440,7 +445,7 @@ class RecordTimerEntry(timer.TimerEntry):
 				self.backoff = 0
 				return True
 			self.log(7, "prepare failed")
-			if eStreamServer.getInstance().getConnectedClients():
+			if NavigationInstance.instance.getClientsStreaming():
 				eStreamServer.getInstance().stopStream()
 				return False
 			if self.first_try_prepare or (self.ts_dialog is not None and not self.checkingTimeshiftRunning()):
@@ -489,7 +494,7 @@ class RecordTimerEntry(timer.TimerEntry):
 						RecordTimerEntry.setWasInStandby()
 					notify = config.usage.show_message_when_recording_starts.value and self.InfoBarInstance and self.InfoBarInstance.execing
 					cur_ref = NavigationInstance.instance.getCurrentlyPlayingServiceReference()
-					pip_zap = self.pipzap or (cur_ref and cur_ref.getPath() and '%3a//' not in cur_ref.toString() and SystemInfo["PIPAvailable"])
+					pip_zap = self.pipzap or (cur_ref and cur_ref.getPath() and '%3a//' not in cur_ref.toString() and BoxInfo.getItem("PIPAvailable"))
 					if pip_zap:
 						cur_ref_group = NavigationInstance.instance.getCurrentlyPlayingServiceOrGroup()
 						if cur_ref_group and cur_ref_group != self.service_ref.ref and self.InfoBarInstance and hasattr(self.InfoBarInstance.session, 'pipshown') and not Components.ParentalControl.parentalControl.isProtected(self.service_ref.ref):
@@ -533,8 +538,8 @@ class RecordTimerEntry(timer.TimerEntry):
 									MoviePlayerinstance.movieselection_dlg.close(None)
 									force = True
 								elif hasattr(MoviePlayerinstance, "execing") and MoviePlayerinstance.execing:
-									from Screens.InfoBarGenerics import setResumePoint
-									setResumePoint(MoviePlayerinstance.session)
+									from Screens.InfoBarGenerics import resumePointsInstance
+									resumePointsInstance.setResumePoint(MoviePlayerinstance.session)
 									MoviePlayerinstance.close()
 									force = True
 							if not force and MediaPlayerinstance and hasattr(MediaPlayerinstance, "execing") and MediaPlayerinstance.execing:
@@ -595,7 +600,7 @@ class RecordTimerEntry(timer.TimerEntry):
 				self.rec_ref = None
 				self.background_zap = None
 			if not checkForRecordings():
-				if self.afterEvent == AFTEREVENT.DEEPSTANDBY or self.afterEvent == AFTEREVENT.AUTO and (Screens.Standby.inStandby or RecordTimerEntry.wasInStandby) and not config.misc.standbyCounter.value:
+				if self.afterEvent == AFTEREVENT.DEEPSTANDBY or self.afterEvent == AFTEREVENT.AUTO and (Screens.Standby.inStandby or RecordTimerEntry.wasInStandby) and (not config.misc.standbyCounter.value and NavigationInstance.instance.wasTimerWakeup()):
 					if not Screens.Standby.inTryQuitMainloop:
 						if Screens.Standby.inStandby:
 							RecordTimerEntry.TryQuitMainloop()
@@ -1251,7 +1256,10 @@ class RecordTimer(timer.Timer):
 	def getAllTimersList(self):
 		return self.timer_list + self.fallback_timer_list
 
-	def isInTimer(self, eventid, begin, duration, service):
+	def getDisabledTimers(self):
+		return self.processed_timers # TODO add  fallback processed timers too
+
+	def isInTimer(self, eventid, begin, duration, service, disabledTimers=False):
 		returnValue = None
 		type = 0
 		time_match = 0
@@ -1259,7 +1267,10 @@ class RecordTimer(timer.Timer):
 		check_offset_time = not config.recording.margin_before.value and not config.recording.margin_after.value
 		end = begin + duration
 		refstr = ':'.join(service.split(':')[:11])
-		for x in self.getAllTimersList():
+		timersList = self.getAllTimersList() if not disabledTimers else self.getDisabledTimers()
+		for x in timersList:
+			if disabledTimers and not x.disabled:
+				continue
 			check = ':'.join(x.service_ref.ref.toString().split(':')[:11]) == refstr
 			if check:
 				timer_end = x.end
